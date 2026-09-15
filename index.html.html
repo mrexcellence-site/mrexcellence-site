@@ -1,3 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MRExcellence — Accompagnement MRE</title>
+<meta name="description" content="MRExcellence accompagne les Marocains Résidant à l'Étranger dans l'achat de leur bien au Maroc, à distance et en toute confiance.">
+<style>
+:root{--navy:#0d1b2a;--gold:#c8a45d;--cream:#f7f3ea;--text:#24313d;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:5;background:rgba(13,27,42,.96);display:flex;justify-content:space-between;align-items:center;padding:18px 7%;color:white}
+.logo{font-size:25px;font-weight:800;letter-spacing:.5px}.logo span{color:var(--gold)}
+nav a{color:white;text-decoration:none;margin-left:24px;font-weight:600}
+.hero{min-height:92vh;padding:150px 7% 90px;background:linear-gradient(135deg,#0d1b2a 0%,#17334c 65%,#244b60 100%);color:white;display:flex;align-items:center}
+.hero-inner{max-width:850px}.tag{color:var(--gold);font-weight:800;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.03;margin:18px 0}.hero p{font-size:20px;max-width:680px;color:#e7edf2}
+.btn{display:inline-block;padding:15px 24px;border-radius:10px;text-decoration:none;font-weight:800;margin:10px 10px 0 0}
+.primary{background:var(--gold);color:var(--navy)}.secondary{border:1px solid #ffffff55;color:white}
+section{padding:80px 7%}.container{max-width:1100px;margin:auto}
+h2{font-size:40px;color:var(--navy);margin:0 0 15px}.intro{max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}
+.card{background:white;padding:30px;border-radius:18px;box-shadow:0 10px 35px #0d1b2a12}.icon{font-size:32px}.card h3{color:var(--navy);margin:12px 0 8px}
+.dark{background:var(--navy);color:white}.dark h2{color:white}.dark .card{background:#142b40;color:#e8eef2}.dark .card h3{color:var(--gold)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:35px}.step{border-top:3px solid var(--gold);padding-top:18px}.num{font-size:14px;color:var(--gold);font-weight:900}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.contactbox{background:white;padding:35px;border-radius:18px}
+footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
+@media(max-width:800px){nav .links{display:none}.grid,.steps,.contact{grid-template-columns:1fr}.hero{padding-top:130px}section{padding:60px 6%}}
+</style>
+
+<!-- MRExcellence Analytics (GA4)
+     1) Create a Google Analytics 4 property.
+     2) Replace G-XXXXXXXXXX below with your Measurement ID.
+     3) Keep this script in the <head>.
+-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZR1LTWP85"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0ZR1LTWP85', {
+    anonymize_ip: true
+  });
+
+  // Track WhatsApp button clicks
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        gtag('event', 'whatsapp_click', {
+          event_category: 'engagement',
+          event_label: 'MRExcellence WhatsApp'
+        });
+      });
+    });
+  });
+</script>
+
+</head>
+<body>
+<nav><div class="logo">MR<span>Excellence</span></div><div class="links"><a href="#services">Services</a><a href="#methode">Méthode</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+<div class="hero-inner">
+<div class="tag">Vérification & accompagnement indépendant pour MRE</div>
+<h1>Achetez votre bien au Maroc, en toute confiance.</h1>
+<p>Même à distance. Sans mauvaise surprise. MRExcellence vous accompagne sur place pour vérifier votre projet immobilier avant votre décision.</p>
+<a class="btn primary" href="https://wa.me/212728978449" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+<a class="btn secondary" href="#services">Découvrir nos services</a>
+</div>
+</header>
+
+<section id="services"><div class="container">
+<h2>Une vérification indépendante, sur place</h2>
+<p class="intro">Vous êtes MRE et vous envisagez d'acheter un bien au Maroc ? Nous vous aidons à prendre votre décision avec des informations concrètes recueillies sur place.</p>
+<div class="grid">
+<div class="card"><div class="icon">📍</div><h3>Visite & vérification</h3><p>Visite du bien sur place pour vérifier les éléments importants avant votre décision.</p></div>
+<div class="card"><div class="icon">📸</div><h3>Photos, vidéo & rapport</h3><p>Recevez des photos, une vidéo et un rapport détaillé afin de mieux évaluer le bien à distance.</p></div>
+<div class="card"><div class="icon">🤝</div><h3>Coordination professionnelle</h3><p>Coordination avec le notaire, l'avocat et des experts indépendants selon les besoins de votre projet.</p></div>
+</div>
+</div></section>
+
+<section class="dark" id="methode"><div class="container">
+<h2>Vous décidez. Les professionnels sécurisent.</h2>
+<p>Notre rôle est de vous accompagner et de vous donner une vision claire du bien et des vérifications à effectuer. La décision finale vous appartient.</p>
+<div class="steps">
+<div class="step"><div class="num">01 — ÉCHANGE</div><p>Comprendre votre projet et vos besoins.</p></div>
+<div class="step"><div class="num">02 — VISITE</div><p>Vérifier le bien directement sur place.</p></div>
+<div class="step"><div class="num">03 — RAPPORT</div><p>Photos, vidéo et rapport détaillé.</p></div>
+<div class="step"><div class="num">04 — COORDINATION</div><p>Mettre en relation les professionnels nécessaires.</p></div>
+</div>
+</div></section>
+
 <section id="contact">
   <div class="container contact">
 
@@ -127,3 +218,7 @@
     </div>
   </div>
 </section>
+
+<footer>© 2026 MRExcellence — Accompagnement indépendant pour MRE</footer>
+</body>
+</html>
