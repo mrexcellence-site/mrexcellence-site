@@ -113,6 +113,29 @@ footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
 }
 
 
+/* ===== MRExcellence Contact Methods ===== */
+.contactbox{position:relative;overflow:hidden}
+.contact-intro{color:#5d6a75;margin:6px 0 20px;line-height:1.6}
+.contact-methods{display:grid;gap:12px;margin:18px 0 22px}
+.contact-method{display:flex;align-items:center;gap:14px;padding:15px 16px;border:1px solid #e4e8eb;border-radius:14px;text-decoration:none;background:#fff;transition:.2s ease;box-shadow:0 6px 18px rgba(1,19,46,.05)}
+.contact-method:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(1,19,46,.10);border-color:#d6c28d}
+.contact-method-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;background:#f7f3ea}
+.contact-method strong{display:block;color:var(--navy);font-size:15px;margin-bottom:3px}
+.contact-method span{display:block;color:#697681;font-size:13px;line-height:1.4}
+.contact-method.whatsapp .contact-method-icon{background:#eaf8ef}
+.contact-method.email .contact-method-icon{background:#eef3ff}
+.contact-form-wrap{margin-top:22px;padding-top:22px;border-top:1px solid #e5e8eb}
+.contact-form-title{font-weight:900;color:var(--navy);font-size:17px;margin-bottom:5px}
+.contact-form-subtitle{font-size:13px;color:#697681;margin:0 0 15px;line-height:1.5}
+.contact-form{gap:10px}
+.contact-form input,.contact-form textarea{box-sizing:border-box}
+.contact-form textarea{min-height:120px}
+.contact-submit{width:100%;border:0;cursor:pointer;text-align:center}
+.form-note{font-size:12px;color:#66737e;margin:0}
+@media(max-width:800px){
+  .contact-method{padding:14px}
+}
+
 </style>
 
 <!-- MRExcellence Analytics (GA4)
@@ -270,31 +293,53 @@ footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
 </div>
 </div></section>
 
-<section id="contact"><div class="container contact">
-<div><h2>Votre projet commence ici.</h2><p>Notre équipe MRExcellence est à votre écoute pour répondre à vos questions et vous accompagner dans votre projet immobilier au Maroc.</p></div>
-<div class="contactbox"><h3>Contactez notre équipe</h3><p><strong>MRExcellence</strong><br>Accompagnement immobilier indépendant pour MRE<br>Casablanca, Maroc</p>
-<div class="email-contact">
-  <div class="email-icon">✉</div>
-  <h4>Notre équipe est à votre écoute</h4>
-  <p>Écrivez-nous directement par e-mail pour recevoir plus d'informations sur votre projet.</p>
-  <a class="email-address" href="mailto:contact.mrexellence@gmail.com">contact.mrexellence@gmail.com</a>
-  <a class="email-btn" href="mailto:contact.mrexellence@gmail.com?subject=Demande%20d%27information%20—%20MRExcellence">✉ Écrire à notre équipe</a>
-</div>
-<p style="font-size:14px;margin-top:14px">Réponse sous 24h — premier échange sans engagement.</p>
+<section id="contact">
+  <div class="container contact">
+    <div>
+      <div class="tag" style="color:var(--gold)">CONTACT MRExcellence</div>
+      <h2>Parlons de votre projet immobilier.</h2>
+      <p>Une question, un bien à vérifier ou un projet d'achat au Maroc ? Choisissez le moyen de contact qui vous convient.</p>
+    </div>
 
-<div style="margin-top:22px;font-weight:900;color:var(--navy)">Ou laissez-nous votre demande</div>
-<form class="contact-form" action="https://formsubmit.co/contact.mrexellence@gmail.com" method="POST">
-<input type="hidden" name="_subject" value="Nouveau contact depuis MRExcellence">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-<label for="client-email">Votre email</label>
-<input id="client-email" type="email" name="email" placeholder="exemple@email.com" required>
-<label for="client-message">Votre message</label>
-<textarea id="client-message" name="message" placeholder="Décrivez brièvement votre projet..." required></textarea>
-<button class="btn primary" type="submit">Envoyer ma demande</button>
-<p class="form-note">Votre demande sera envoyée directement à MRExcellence.</p>
-</form></div>
-</div></section>
+    <div class="contactbox">
+      <h3>Contactez-nous directement</h3>
+      <p class="contact-intro">Notre équipe vous répond et vous accompagne selon votre besoin.</p>
+
+      <div class="contact-methods">
+        <a class="contact-method whatsapp" href="https://wa.me/212728978449" target="_blank" rel="noopener" aria-label="Contacter MRExcellence sur WhatsApp">
+          <div class="contact-method-icon">💬</div>
+          <div><strong>WhatsApp — Réponse directe</strong><span>Ouvrir WhatsApp et nous envoyer un message</span></div>
+        </a>
+
+        <a class="contact-method email" href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.mrexellence@gmail.com&su=Demande%20d%27information%20%E2%80%94%20MRExcellence" target="_blank" rel="noopener" aria-label="Écrire à MRExcellence avec Gmail">
+          <div class="contact-method-icon">✉️</div>
+          <div><strong>Gmail — Écrire à notre équipe</strong><span>Ouvrir Gmail avec notre adresse déjà renseignée</span></div>
+        </a>
+      </div>
+
+      <div class="contact-form-wrap">
+        <div class="contact-form-title">Vous préférez nous écrire ici ?</div>
+        <p class="contact-form-subtitle">Entrez votre adresse e-mail et votre message. Nous le recevrons directement.</p>
+
+        <form class="contact-form" action="https://formsubmit.co/contact.mrexellence@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nouvelle demande depuis le site MRExcellence">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://mrexcellencesite.vercel.app/#contact">
+
+          <label for="client-email">Votre adresse e-mail</label>
+          <input id="client-email" type="email" name="email" placeholder="exemple@gmail.com" autocomplete="email" required>
+
+          <label for="client-message">Votre message</label>
+          <textarea id="client-message" name="message" placeholder="Décrivez votre projet ou votre question..." required></textarea>
+
+          <button class="btn primary contact-submit" type="submit">📩 Envoyer ma demande</button>
+          <p class="form-note">Votre adresse e-mail sera utilisée pour pouvoir vous répondre.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>© 2026 MRExcellence — Accompagnement indépendant pour MRE</footer>
 
