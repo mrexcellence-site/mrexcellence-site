@@ -64,6 +64,63 @@ footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
   .price-notice{left:14px;right:14px;bottom:14px;max-width:none}
 }
 
+
+.email-contact{
+  margin-top:18px;
+  padding:20px;
+  border:1px solid #eadfca;
+  border-radius:16px;
+  background:linear-gradient(135deg,#fffdf8,#f7f3ea);
+}
+.email-contact .email-icon{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--gold);color:var(--navy);
+  font-size:21px;font-weight:900;margin-bottom:12px;
+}
+.email-contact h4{
+  margin:0 0 5px;color:var(--navy);font-size:18px;
+}
+.email-contact p{
+  margin:0 0 14px;color:#5d6a75;font-size:14px;
+}
+.email-address{
+  display:block;
+  color:var(--navy);
+  font-weight:900;
+  text-decoration:none;
+  word-break:break-word;
+  margin-bottom:14px;
+}
+.email-address:hover{text-decoration:underline}
+.email-btn{
+  display:inline-block;
+  background:var(--navy);
+  color:#fff;
+  padding:12px 17px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:900;
+}
+.email-btn:hover{opacity:.92;transform:translateY(-1px)}
+@media(max-width:800px){
+  .email-contact{padding:18px}
+}
+
+
+/* ===== MRExcellence video showcase ===== */
+.video-showcase{background:#fff;padding:72px 7%;}
+.video-wrap{max-width:980px;margin:0 auto;position:relative;}
+.video-card{position:relative;overflow:hidden;border-radius:24px;background:#08131f;box-shadow:0 22px 60px #0d1b2a24;}
+.video-card video{display:block;width:100%;max-height:720px;object-fit:cover;background:#08131f;}
+.video-overlay{position:absolute;left:0;right:0;bottom:0;padding:28px 30px;background:linear-gradient(transparent,rgba(1,19,46,.92));color:#fff;pointer-events:none;}
+.video-overlay .tag{display:inline-block;color:var(--gold);font-size:12px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px;}
+.video-overlay h2{color:#fff;margin:0 0 7px;font-size:30px;}
+.video-overlay p{margin:0;max-width:700px;color:#e4ebf0;font-size:15px;line-height:1.55;}
+.video-cta{margin-top:18px;display:inline-block;background:var(--gold);color:var(--navy);padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:900;pointer-events:auto;}
+.video-note{text-align:center;color:#66737e;font-size:13px;margin:16px auto 0;max-width:760px;}
+@media(max-width:700px){.video-showcase{padding:52px 5%;}.video-card{border-radius:18px;}.video-card video{max-height:none;aspect-ratio:9/16;object-fit:cover;}.video-overlay{padding:20px 18px 18px;}.video-overlay h2{font-size:23px;}.video-overlay p{font-size:13px;}.video-cta{padding:10px 14px;font-size:13px;}}
+
 </style>
 
 <!-- MRExcellence Analytics (GA4)
@@ -116,6 +173,24 @@ footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
 <a class="btn secondary" href="#services">Découvrir nos services</a>
 </div>
 </header>
+
+<section class="video-showcase" id="visite-video">
+  <div class="video-wrap">
+    <div class="video-card">
+      <video controls playsinline preload="metadata" poster="video-poster.jpg">
+        <source src="mr-excellence-visite-distance.mp4" type="video/mp4">
+        Votre navigateur ne prend pas en charge la lecture vidéo.
+      </video>
+      <div class="video-overlay">
+        <div class="tag">MRExcellence • Visite à distance</div>
+        <h2>Achetez au Maroc, même à distance.</h2>
+        <p>Visite du bien, vérification sur place et accompagnement indépendant pour vous aider à avancer avec plus de sérénité.</p>
+        <a class="video-cta" href="#tarifs">Découvrir nos accompagnements</a>
+      </div>
+    </div>
+    <p class="video-note">Une visite immobilière à distance pensée pour les MRE et les acheteurs qui ne peuvent pas se déplacer immédiatement.</p>
+  </div>
+</section>
 
 <section id="services"><div class="container">
 <h2>Une vérification indépendante, sur place</h2>
@@ -211,9 +286,18 @@ footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
 </div></section>
 
 <section id="contact"><div class="container contact">
-<div><h2>Votre projet commence ici.</h2><p>Échangez directement avec Said ACHTOUK, Coordinateur — Transactions Immobilières MRE, basé à Casablanca.</p></div>
-<div class="contactbox"><h3>MRExcellence</h3><p><strong>Said ACHTOUK</strong><br>Coordinateur — Transactions Immobilières MRE<br>Casablanca, Maroc</p><a class="btn primary" href="https://wa.me/212728978449" target="_blank" rel="noopener">WhatsApp : +212 728 978 449</a><p style="font-size:14px">Réponse sous 24h — sans engagement.</p>
+<div><h2>Votre projet commence ici.</h2><p>Notre équipe MRExcellence est à votre écoute pour répondre à vos questions et vous accompagner dans votre projet immobilier au Maroc.</p></div>
+<div class="contactbox"><h3>Contactez notre équipe</h3><p><strong>MRExcellence</strong><br>Accompagnement immobilier indépendant pour MRE<br>Casablanca, Maroc</p>
+<div class="email-contact">
+  <div class="email-icon">✉</div>
+  <h4>Notre équipe est à votre écoute</h4>
+  <p>Écrivez-nous directement par e-mail pour recevoir plus d'informations sur votre projet.</p>
+  <a class="email-address" href="mailto:contact.mrexellence@gmail.com">contact.mrexellence@gmail.com</a>
+  <a class="email-btn" href="mailto:contact.mrexellence@gmail.com?subject=Demande%20d%27information%20—%20MRExcellence">✉ Écrire à notre équipe</a>
+</div>
+<p style="font-size:14px;margin-top:14px">Réponse sous 24h — premier échange sans engagement.</p>
 
+<div style="margin-top:22px;font-weight:900;color:var(--navy)">Ou laissez-nous votre demande</div>
 <form class="contact-form" action="https://formsubmit.co/contact.mrexellence@gmail.com" method="POST">
 <input type="hidden" name="_subject" value="Nouveau contact depuis MRExcellence">
 <input type="hidden" name="_captcha" value="false">
