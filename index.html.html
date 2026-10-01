@@ -22,9 +22,48 @@ h2{font-size:40px;color:var(--navy);margin:0 0 15px}.intro{max-width:720px}
 .card{background:white;padding:30px;border-radius:18px;box-shadow:0 10px 35px #0d1b2a12}.icon{font-size:32px}.card h3{color:var(--navy);margin:12px 0 8px}
 .dark{background:var(--navy);color:white}.dark h2{color:white}.dark .card{background:#142b40;color:#e8eef2}.dark .card h3{color:var(--gold)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:35px}.step{border-top:3px solid var(--gold);padding-top:18px}.num{font-size:14px;color:var(--gold);font-weight:900}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.contactbox{background:white;padding:35px;border-radius:18px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.contactbox{background:white;padding:35px;border-radius:18px}.contact-form{margin-top:24px;display:grid;gap:12px}.contact-form label{font-weight:700;color:var(--navy)}.contact-form input,.contact-form textarea{width:100%;padding:13px 14px;border:1px solid #ccd5dc;border-radius:10px;font:inherit;background:#fff}.contact-form textarea{min-height:110px;resize:vertical}.contact-form button{border:0;cursor:pointer}.form-note{font-size:13px;color:#66737e;margin:0}
 footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
 @media(max-width:800px){nav .links{display:none}.grid,.steps,.contact{grid-template-columns:1fr}.hero{padding-top:130px}section{padding:60px 6%}}
+
+/* ===== MRExcellence Pricing / Checkout ===== */
+.price-notice{position:fixed;right:22px;bottom:22px;z-index:20;max-width:390px;background:rgba(13,27,42,.98);color:#fff;padding:22px 24px;border-radius:18px;box-shadow:0 18px 55px #0d1b2a55;border:1px solid #c8a45d66;transform:translateY(140%);opacity:0;transition:.45s ease}
+.price-notice.show{transform:translateY(0);opacity:1}
+.price-notice .close-notice{position:absolute;right:12px;top:8px;background:none;border:0;color:#cbd5dc;font-size:22px;cursor:pointer}
+.price-notice .notice-tag{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}
+.price-notice h3{margin:7px 25px 6px 0;color:#fff;font-size:21px}
+.price-notice p{margin:0 0 14px;color:#dce5eb;font-size:14px;line-height:1.5}
+.price-notice a{display:inline-block;background:var(--gold);color:var(--navy);padding:11px 16px;border-radius:9px;text-decoration:none;font-weight:900;font-size:14px}
+
+.pricing{background:#f7f3ea}
+.pricing-header{text-align:center;max-width:760px;margin:0 auto}
+.pricing-header h2{margin-bottom:10px}
+.pricing-header p{margin:0 auto;color:#5d6a75}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:38px;align-items:stretch}
+.price-card{position:relative;background:#fff;border:1px solid #e1e5e8;border-radius:20px;padding:32px 28px;box-shadow:0 12px 35px #0d1b2a10;display:flex;flex-direction:column}
+.price-card.featured{border:2px solid var(--gold);transform:translateY(-8px);box-shadow:0 18px 45px #0d1b2a1c}
+.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);padding:7px 15px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:1px;white-space:nowrap}
+.price-card h3{color:var(--navy);font-size:25px;margin:0 0 5px}
+.price-subtitle{min-height:50px;color:#65727c;font-size:14px;margin:0 0 14px}
+.price{font-size:38px;font-weight:900;color:var(--navy);line-height:1.1;margin:5px 0}
+.price-eur{font-size:14px;color:#6b7780;margin-bottom:18px}
+.price-list{list-style:none;padding:0;margin:0 0 24px;flex:1}
+.price-list li{position:relative;padding:7px 0 7px 24px;font-size:14px;color:#34424e}
+.price-list li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:900}
+.price-note{font-size:13px;color:#687681;margin:0 0 18px}
+.price-btn{display:block;text-align:center;padding:14px 18px;border-radius:10px;text-decoration:none;font-weight:900;background:var(--navy);color:#fff;transition:.2s}
+.price-btn:hover{transform:translateY(-1px);opacity:.94}
+.featured .price-btn{background:var(--gold);color:var(--navy)}
+.pricing-disclaimer{margin:28px auto 0;max-width:850px;text-align:center;color:#687681;font-size:12px}
+
+@media(max-width:900px){
+  .price-grid{grid-template-columns:1fr}
+  .price-card.featured{transform:none}
+}
+@media(max-width:600px){
+  .price-notice{left:14px;right:14px;bottom:14px;max-width:none}
+}
+
 </style>
 
 <!-- MRExcellence Analytics (GA4)
@@ -56,7 +95,17 @@ footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
 
 </head>
 <body>
-<nav><div class="logo">MR<span>Excellence</span></div><div class="links"><a href="#services">Services</a><a href="#methode">Méthode</a><a href="#contact">Contact</a></div></nav>
+
+<!-- MRExcellence entry notification -->
+<div class="price-notice" id="priceNotice" role="dialog" aria-label="Accompagnement MRExcellence">
+  <button class="close-notice" id="closeNotice" aria-label="Fermer">×</button>
+  <div class="notice-tag">MRExcellence</div>
+  <h3>Vous achetez au Maroc depuis l'étranger ?</h3>
+  <p>Ne prenez pas une décision immobilière importante à distance sans vérification. Découvrez l'accompagnement adapté à votre projet.</p>
+  <a href="#tarifs" id="noticeCta">Découvrir nos accompagnements</a>
+</div>
+
+<nav><div class="logo">MR<span>Excellence</span></div><div class="links"><a href="#services">Services</a><a href="#tarifs">Tarifs</a><a href="#methode">Méthode</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero">
 <div class="hero-inner">
@@ -78,6 +127,78 @@ footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
 </div>
 </div></section>
 
+
+<!-- MRExcellence pricing -->
+<section class="pricing" id="tarifs">
+  <div class="container">
+    <div class="pricing-header">
+      <div class="tag" style="color:var(--gold)">ACCOMPAGNEMENT MRExcellence</div>
+      <h2>Choisissez votre niveau d'accompagnement</h2>
+      <p>Des solutions adaptées à votre besoin, de la première consultation à l'accompagnement complet.</p>
+    </div>
+
+    <div class="price-grid">
+
+      <article class="price-card">
+        <h3>Découverte</h3>
+        <p class="price-subtitle">Pour poser vos questions avant tout engagement.</p>
+        <div class="price">600 MAD</div>
+        <div class="price-eur">≈ 55 € — appel de 45 min</div>
+        <ul class="price-list">
+          <li>Appel vidéo ou téléphonique de 45 min</li>
+          <li>Analyse de votre projet d'achat</li>
+          <li>Orientation sur les prochaines étapes</li>
+          <li>Réponses à toutes vos questions</li>
+          <li>Compte-rendu écrit après l'appel</li>
+        </ul>
+        <p class="price-note">Idéal pour un premier avis.</p>
+        <a class="price-btn stripe-btn" data-plan="decouverte" href="#">Réserver ma consultation</a>
+      </article>
+
+      <article class="price-card">
+        <h3>Standard</h3>
+        <p class="price-subtitle">Vérification complète d'un bien avant engagement.</p>
+        <div class="price">4 000 MAD</div>
+        <div class="price-eur">≈ 370 €</div>
+        <ul class="price-list">
+          <li>Tout le niveau Découverte, inclus</li>
+          <li>Visite du bien sur place</li>
+          <li>Photos et vidéos datées</li>
+          <li>Vérification des documents : titre, hypothèque, urbanisme</li>
+          <li>Rapport de mission complet PDF</li>
+          <li>Suivi jusqu'à votre décision</li>
+        </ul>
+        <p class="price-note">Le bon équilibre protection / prix.</p>
+        <a class="price-btn stripe-btn" data-plan="standard" href="#">Réserver mon accompagnement</a>
+      </article>
+
+      <article class="price-card featured">
+        <div class="price-badge">LE PLUS CHOISI</div>
+        <h3>Premium</h3>
+        <p class="price-subtitle">Accompagnement complet jusqu'à la signature.</p>
+        <div class="price">10 000 MAD</div>
+        <div class="price-eur">≈ 925 €</div>
+        <ul class="price-list">
+          <li>Tout le niveau Standard, inclus</li>
+          <li>Coordination avec notaire et avocat</li>
+          <li>Relecture procuration & promesse de vente</li>
+          <li>Suivi du transfert de fonds</li>
+          <li>Présence à distance jusqu'à l'acte</li>
+          <li>Disponibilité prioritaire — réponse sous 24h</li>
+        </ul>
+        <p class="price-note">Pour acheter l'esprit tranquille.</p>
+        <a class="price-btn stripe-btn" data-plan="premium" href="#">Choisir l'accompagnement Premium</a>
+      </article>
+
+    </div>
+
+    <p class="pricing-disclaimer">
+      Les tarifs sont indicatifs et peuvent évoluer selon la complexité du dossier.
+      Un devis précis est confirmé avant le début de la mission.
+    </p>
+  </div>
+</section>
+
 <section class="dark" id="methode"><div class="container">
 <h2>Vous décidez. Les professionnels sécurisent.</h2>
 <p>Notre rôle est de vous accompagner et de vous donner une vision claire du bien et des vérifications à effectuer. La décision finale vous appartient.</p>
@@ -89,136 +210,73 @@ footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
 </div>
 </div></section>
 
-<section id="contact">
-  <div class="container contact">
+<section id="contact"><div class="container contact">
+<div><h2>Votre projet commence ici.</h2><p>Échangez directement avec Said ACHTOUK, Coordinateur — Transactions Immobilières MRE, basé à Casablanca.</p></div>
+<div class="contactbox"><h3>MRExcellence</h3><p><strong>Said ACHTOUK</strong><br>Coordinateur — Transactions Immobilières MRE<br>Casablanca, Maroc</p><a class="btn primary" href="https://wa.me/212728978449" target="_blank" rel="noopener">WhatsApp : +212 728 978 449</a><p style="font-size:14px">Réponse sous 24h — sans engagement.</p>
 
-    <div>
-      <h2>Votre projet commence ici.</h2>
-
-      <p>
-        Échangez directement avec Said ACHTOUK,
-        Coordinateur — Transactions Immobilières MRE,
-        basé à Casablanca.
-      </p>
-
-      <p>
-        Vous souhaitez recevoir plus d'informations ?
-        Laissez-nous votre adresse e-mail et nous vous recontacterons.
-      </p>
-    </div>
-
-    <div class="contactbox">
-      <h3>MRExcellence</h3>
-
-      <p>
-        <strong>Said ACHTOUK</strong><br>
-        Coordinateur — Transactions Immobilières MRE<br>
-        Casablanca, Maroc
-      </p>
-
-      <a
-        class="btn primary"
-        href="https://wa.me/212728978449"
-        target="_blank"
-        rel="noopener"
-      >
-        WhatsApp : +212 728 978 449
-      </a>
-
-      <hr style="margin:28px 0;border:0;border-top:1px solid #ddd">
-
-      <h3>Recevoir plus d'informations</h3>
-
-      <form
-        action="https://formsubmit.co/contact.mrexellence@gmail.com"
-        method="POST"
-      >
-
-        <!-- Configuration FormSubmit -->
-        <input type="hidden" name="_subject"
-          value="Nouvelle demande — MRExcellence">
-
-        <input type="hidden" name="_captcha"
-          value="true">
-
-        <input type="hidden" name="_template"
-          value="table">
-
-        <input type="hidden" name="_next"
-          value="https://mrexcellencesite.vercel.app/">
-
-        <!-- Email du client -->
-        <label
-          for="email"
-          style="display:block;font-weight:700;margin-bottom:7px"
-        >
-          Votre adresse e-mail
-        </label>
-
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="exemple@email.com"
-          required
-          autocomplete="email"
-          style="
-            width:100%;
-            padding:14px;
-            border:1px solid #d5d5d5;
-            border-radius:10px;
-            font-size:16px;
-            margin-bottom:16px;
-          "
-        >
-
-        <!-- Message du client -->
-        <label
-          for="message"
-          style="display:block;font-weight:700;margin-bottom:7px"
-        >
-          Votre demande
-        </label>
-
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Écrivez votre demande..."
-          rows="5"
-          required
-          style="
-            width:100%;
-            padding:14px;
-            border:1px solid #d5d5d5;
-            border-radius:10px;
-            font-size:16px;
-            resize:vertical;
-            margin-bottom:16px;
-          "
-        ></textarea>
-
-        <button
-          type="submit"
-          class="btn primary"
-          style="
-            border:0;
-            cursor:pointer;
-            width:100%;
-          "
-        >
-          Envoyer ma demande
-        </button>
-
-      </form>
-
-      <p style="font-size:14px;margin-bottom:0;margin-top:15px">
-        Réponse sous 24h — sans engagement.
-      </p>
-
-    </div>
-  </div>
-</section>
+<form class="contact-form" action="https://formsubmit.co/contact.mrexellence@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Nouveau contact depuis MRExcellence">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<label for="client-email">Votre email</label>
+<input id="client-email" type="email" name="email" placeholder="exemple@email.com" required>
+<label for="client-message">Votre message</label>
+<textarea id="client-message" name="message" placeholder="Décrivez brièvement votre projet..." required></textarea>
+<button class="btn primary" type="submit">Envoyer ma demande</button>
+<p class="form-note">Votre demande sera envoyée directement à MRExcellence.</p>
+</form></div>
+</div></section>
 
 <footer>© 2026 MRExcellence — Accompagnement indépendant pour MRE</footer>
+
+<script>
+/*
+  ===== STRIPE CHECKOUT LINKS =====
+  Replace the 3 values below with the Stripe Checkout URLs you create
+  for each MRExcellence offer.
+*/
+const STRIPE_LINKS = {
+  decouverte: "COLLE_ICI_LE_LIEN_STRIPE_DECouverte",
+  standard: "COLLE_ICI_LE_LIEN_STRIPE_STANDARD",
+  premium: "COLLE_ICI_LE_LIEN_STRIPE_PREMIUM"
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Entry notification: show once per browser session.
+  const notice = document.getElementById("priceNotice");
+  const closeNotice = document.getElementById("closeNotice");
+  const noticeCta = document.getElementById("noticeCta");
+
+  if (notice && !sessionStorage.getItem("mrexcellence_notice_seen")) {
+    setTimeout(() => notice.classList.add("show"), 900);
+  }
+
+  function hideNotice() {
+    if (!notice) return;
+    notice.classList.remove("show");
+    sessionStorage.setItem("mrexcellence_notice_seen", "1");
+  }
+
+  closeNotice?.addEventListener("click", hideNotice);
+  noticeCta?.addEventListener("click", hideNotice);
+
+  // Stripe buttons
+  document.querySelectorAll(".stripe-btn").forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      const plan = button.dataset.plan;
+      const url = STRIPE_LINKS[plan];
+
+      if (!url || url.startsWith("COLLE_ICI")) {
+        alert("Le lien de paiement Stripe pour cette formule n'est pas encore configuré.");
+        return;
+      }
+
+      window.location.href = url;
+    });
+  });
+});
+</script>
+
 </body>
 </html>
