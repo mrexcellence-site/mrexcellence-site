@@ -3,387 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MRExcellence — Accompagnement MRE</title>
-<meta name="description" content="MRExcellence accompagne les Marocains Résidant à l'Étranger dans l'achat de leur bien au Maroc, à distance et en toute confiance.">
+<title>MR Excellence — Accompagnement immobilier au Maroc pour MRE</title>
+<meta name="description" content="MR Excellence accompagne les MRE dans leur projet immobilier au Maroc : visite à distance, vérification indépendante, rapport et coordination professionnelle.">
 <style>
-:root{--navy:#0d1b2a;--gold:#c8a45d;--cream:#f7f3ea;--text:#24313d;--white:#fff}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
-nav{position:fixed;top:0;left:0;right:0;z-index:5;background:rgba(13,27,42,.96);display:flex;justify-content:space-between;align-items:center;padding:18px 7%;color:white}
-.logo{font-size:25px;font-weight:800;letter-spacing:.5px}.logo span{color:var(--gold)}
-nav a{color:white;text-decoration:none;margin-left:24px;font-weight:600}
-.hero{min-height:92vh;padding:125px 7% 70px;background:linear-gradient(135deg,#0d1b2a 0%,#17334c 65%,#244b60 100%);color:white;display:flex;align-items:center}
-.hero-inner{width:100%;max-width:1250px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,420px);gap:58px;align-items:center}.hero-copy{max-width:760px}.tag{color:var(--gold);font-weight:800;letter-spacing:2px;text-transform:uppercase}
-h1{font-size:clamp(42px,5.7vw,72px);line-height:1.03;margin:18px 0}.hero p{font-size:20px;max-width:680px;color:#e7edf2}
-.btn{display:inline-block;padding:15px 24px;border-radius:10px;text-decoration:none;font-weight:800;margin:10px 10px 0 0}
-.primary{background:var(--gold);color:var(--navy)}.secondary{border:1px solid #ffffff55;color:white}
-.hero-video{justify-self:end;width:min(100%,390px)}
-.hero-video-card{background:#050b12;border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:8px;box-shadow:0 25px 70px rgba(0,0,0,.35)}
-.hero-video video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;background:#050b12;border-radius:16px}
-.hero-video-caption{margin:12px 4px 0;color:#dce5eb;font-size:13px;text-align:center}
-@media(max-width:900px){.hero{padding:120px 6% 60px}.hero-inner{grid-template-columns:1fr;gap:34px}.hero-copy{max-width:760px}.hero-video{justify-self:center;width:min(100%,390px)}h1{font-size:clamp(40px,9vw,62px)}}
-section{padding:80px 7%}.container{max-width:1100px;margin:auto}
-h2{font-size:40px;color:var(--navy);margin:0 0 15px}.intro{max-width:720px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}
-.card{background:white;padding:30px;border-radius:18px;box-shadow:0 10px 35px #0d1b2a12}.icon{font-size:32px}.card h3{color:var(--navy);margin:12px 0 8px}
-.dark{background:var(--navy);color:white}.dark h2{color:white}.dark .card{background:#142b40;color:#e8eef2}.dark .card h3{color:var(--gold)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:35px}.step{border-top:3px solid var(--gold);padding-top:18px}.num{font-size:14px;color:var(--gold);font-weight:900}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.contactbox{background:white;padding:35px;border-radius:18px}.contact-form{margin-top:24px;display:grid;gap:12px}.contact-form label{font-weight:700;color:var(--navy)}.contact-form input,.contact-form textarea{width:100%;padding:13px 14px;border:1px solid #ccd5dc;border-radius:10px;font:inherit;background:#fff}.contact-form textarea{min-height:110px;resize:vertical}.contact-form button{border:0;cursor:pointer}.form-note{font-size:13px;color:#66737e;margin:0}
-footer{background:#08131f;color:#b8c3cc;padding:28px 7%;text-align:center}
-@media(max-width:800px){nav .links{display:none}.grid,.steps,.contact{grid-template-columns:1fr}.hero{padding-top:130px}section{padding:60px 6%}}
-
-/* ===== MRExcellence Pricing / Checkout ===== */
-.price-notice{position:fixed;right:22px;bottom:22px;z-index:20;max-width:390px;background:rgba(13,27,42,.98);color:#fff;padding:22px 24px;border-radius:18px;box-shadow:0 18px 55px #0d1b2a55;border:1px solid #c8a45d66;transform:translateY(140%);opacity:0;transition:.45s ease}
-.price-notice.show{transform:translateY(0);opacity:1}
-.price-notice .close-notice{position:absolute;right:12px;top:8px;background:none;border:0;color:#cbd5dc;font-size:22px;cursor:pointer}
-.price-notice .notice-tag{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}
-.price-notice h3{margin:7px 25px 6px 0;color:#fff;font-size:21px}
-.price-notice p{margin:0 0 14px;color:#dce5eb;font-size:14px;line-height:1.5}
-.price-notice a{display:inline-block;background:var(--gold);color:var(--navy);padding:11px 16px;border-radius:9px;text-decoration:none;font-weight:900;font-size:14px}
-
-.pricing{background:#f7f3ea}
-.pricing-header{text-align:center;max-width:760px;margin:0 auto}
-.pricing-header h2{margin-bottom:10px}
-.pricing-header p{margin:0 auto;color:#5d6a75}
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:38px;align-items:stretch}
-.price-card{position:relative;background:#fff;border:1px solid #e1e5e8;border-radius:20px;padding:32px 28px;box-shadow:0 12px 35px #0d1b2a10;display:flex;flex-direction:column}
-.price-card.featured{border:2px solid var(--gold);transform:translateY(-8px);box-shadow:0 18px 45px #0d1b2a1c}
-.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);padding:7px 15px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:1px;white-space:nowrap}
-.price-card h3{color:var(--navy);font-size:25px;margin:0 0 5px}
-.price-subtitle{min-height:50px;color:#65727c;font-size:14px;margin:0 0 14px}
-.price{font-size:38px;font-weight:900;color:var(--navy);line-height:1.1;margin:5px 0}
-.price-eur{font-size:14px;color:#6b7780;margin-bottom:18px}
-.price-list{list-style:none;padding:0;margin:0 0 24px;flex:1}
-.price-list li{position:relative;padding:7px 0 7px 24px;font-size:14px;color:#34424e}
-.price-list li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:900}
-.price-note{font-size:13px;color:#687681;margin:0 0 18px}
-.price-btn{display:block;text-align:center;padding:14px 18px;border-radius:10px;text-decoration:none;font-weight:900;background:var(--navy);color:#fff;transition:.2s}
-.price-btn:hover{transform:translateY(-1px);opacity:.94}
-.featured .price-btn{background:var(--gold);color:var(--navy)}
-.pricing-disclaimer{margin:28px auto 0;max-width:850px;text-align:center;color:#687681;font-size:12px}
-
-@media(max-width:900px){
-  .price-grid{grid-template-columns:1fr}
-  .price-card.featured{transform:none}
-}
-@media(max-width:600px){
-  .price-notice{left:14px;right:14px;bottom:14px;max-width:none}
-}
-
-
-.email-contact{
-  margin-top:18px;
-  padding:20px;
-  border:1px solid #eadfca;
-  border-radius:16px;
-  background:linear-gradient(135deg,#fffdf8,#f7f3ea);
-}
-.email-contact .email-icon{
-  width:44px;height:44px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--gold);color:var(--navy);
-  font-size:21px;font-weight:900;margin-bottom:12px;
-}
-.email-contact h4{
-  margin:0 0 5px;color:var(--navy);font-size:18px;
-}
-.email-contact p{
-  margin:0 0 14px;color:#5d6a75;font-size:14px;
-}
-.email-address{
-  display:block;
-  color:var(--navy);
-  font-weight:900;
-  text-decoration:none;
-  word-break:break-word;
-  margin-bottom:14px;
-}
-.email-address:hover{text-decoration:underline}
-.email-btn{
-  display:inline-block;
-  background:var(--navy);
-  color:#fff;
-  padding:12px 17px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:900;
-}
-.email-btn:hover{opacity:.92;transform:translateY(-1px)}
-@media(max-width:800px){
-  .email-contact{padding:18px}
-}
-
-
-/* ===== MRExcellence Contact Methods ===== */
-.contactbox{position:relative;overflow:hidden}
-.contact-intro{color:#5d6a75;margin:6px 0 20px;line-height:1.6}
-.contact-methods{display:grid;gap:12px;margin:18px 0 22px}
-.contact-method{display:flex;align-items:center;gap:14px;padding:15px 16px;border:1px solid #e4e8eb;border-radius:14px;text-decoration:none;background:#fff;transition:.2s ease;box-shadow:0 6px 18px rgba(1,19,46,.05)}
-.contact-method:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(1,19,46,.10);border-color:#d6c28d}
-.contact-method-icon{width:44px;height:44px;min-width:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;background:#f7f3ea}
-.contact-method strong{display:block;color:var(--navy);font-size:15px;margin-bottom:3px}
-.contact-method span{display:block;color:#697681;font-size:13px;line-height:1.4}
-.contact-method.whatsapp .contact-method-icon{background:#eaf8ef}
-.contact-method.email .contact-method-icon{background:#eef3ff}
-.contact-form-wrap{margin-top:22px;padding-top:22px;border-top:1px solid #e5e8eb}
-.contact-form-title{font-weight:900;color:var(--navy);font-size:17px;margin-bottom:5px}
-.contact-form-subtitle{font-size:13px;color:#697681;margin:0 0 15px;line-height:1.5}
-.contact-form{gap:10px}
-.contact-form input,.contact-form textarea{box-sizing:border-box}
-.contact-form textarea{min-height:120px}
-.contact-submit{width:100%;border:0;cursor:pointer;text-align:center}
-.form-note{font-size:12px;color:#66737e;margin:0}
-@media(max-width:800px){
-  .contact-method{padding:14px}
-}
-
+:root{--navy:#071a2d;--navy2:#0c2a43;--gold:#d8b15f;--gold2:#f0d48b;--cream:#f7f5ef;--ink:#172330;--muted:#697784;--line:#e4e7e8;--white:#fff;--green:#22a05a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}a{color:inherit}
+.container{width:min(1180px,92%);margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--gold);font-weight:900;font-size:12px;letter-spacing:2px;text-transform:uppercase}.eyebrow:before{content:"";width:26px;height:2px;background:var(--gold)}
+/* Header */
+.site-header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(7,26,45,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff}.brand-mark{width:42px;height:42px;border:1px solid rgba(216,177,95,.7);border-radius:50%;display:grid;place-items:center;font-weight:950;color:var(--gold);font-size:13px}.brand-name{font-size:20px;font-weight:900;letter-spacing:.2px}.brand-name span{color:var(--gold)}.nav-links{display:flex;gap:28px;align-items:center}.nav-links a{color:#f5f7f9;text-decoration:none;font-size:14px;font-weight:750}.nav-cta{padding:11px 17px;border-radius:999px;background:var(--gold);color:var(--navy)!important}.menu{display:none;color:#fff;background:none;border:0;font-size:27px}
+/* Hero */
+.hero{min-height:780px;padding:130px 0 78px;background:radial-gradient(circle at 76% 25%,#214965 0,transparent 32%),linear-gradient(135deg,#061a2d,#0c2a43 62%,#071a2d);color:#fff;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}.hero h1{font-size:clamp(45px,6.1vw,78px);line-height:1.02;letter-spacing:-2.8px;margin:18px 0 22px;max-width:760px}.hero h1 em{font-style:normal;color:var(--gold2)}.hero-copy>p{font-size:19px;color:#dce5eb;max-width:670px;margin:0 0 26px}.hero-actions{display:flex;flex-wrap:wrap;gap:11px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 21px;border-radius:10px;text-decoration:none;font-weight:900;border:1px solid transparent;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-gold{background:var(--gold);color:var(--navy)}.btn-ghost{border-color:rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.04)}
+.hero-video{max-width:470px;margin-left:auto}.video-frame{padding:8px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);border-radius:28px;box-shadow:0 35px 90px rgba(0,0,0,.38)}.video-frame video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#02070c;border-radius:20px}.video-label{display:flex;justify-content:space-between;gap:15px;margin:13px 6px 0;color:#cbd7de;font-size:12px}.hero-trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:45px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12)}.trust-item strong{display:block;font-size:20px;color:#fff}.trust-item span{font-size:12px;color:#aebdc7}
+/* Intro / value */
+.section{padding:105px 0}.section-soft{background:var(--cream)}.section-dark{background:var(--navy);color:#fff}.section-head{max-width:770px;margin-bottom:48px}.section-head h2{font-size:clamp(35px,4.5vw,57px);line-height:1.06;letter-spacing:-1.7px;margin:14px 0}.section-head p{font-size:17px;color:var(--muted);margin:0}.section-dark .section-head p{color:#bac8d1}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.value-card{padding:30px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 16px 45px rgba(7,26,45,.06)}.value-num{font-size:12px;color:var(--gold);font-weight:950;letter-spacing:1px}.value-icon{font-size:30px;margin:25px 0 13px}.value-card h3{font-size:22px;margin:0 0 8px;color:var(--navy)}.value-card p{margin:0;color:var(--muted)}
+/* Feature */
+.feature{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}.feature-visual{min-height:500px;border-radius:28px;background:linear-gradient(145deg,#0b2b45,#0a1d31);padding:32px;display:flex;align-items:end;position:relative;overflow:hidden}.feature-visual:before{content:"MR";position:absolute;font-size:210px;font-weight:950;line-height:1;color:rgba(216,177,95,.08);right:-10px;top:30px}.quote-card{position:relative;z-index:1;background:#fff;border-radius:20px;padding:25px;max-width:390px;box-shadow:0 25px 60px rgba(0,0,0,.25)}.quote-card strong{color:var(--navy);font-size:18px}.quote-card p{margin:10px 0 0;color:var(--muted);font-size:14px}.feature-copy h2{font-size:clamp(35px,4.3vw,56px);line-height:1.05;letter-spacing:-1.5px;margin:14px 0}.check-list{list-style:none;padding:0;margin:25px 0}.check-list li{display:flex;gap:12px;margin:13px 0;color:#3d4b56}.check{width:23px;height:23px;min-width:23px;border-radius:50%;display:grid;place-items:center;background:#e9f6ef;color:var(--green);font-weight:950;font-size:12px}
+/* Process */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.process{border-top:2px solid var(--gold);padding:23px 5px 0}.process span{color:var(--gold);font-weight:950;font-size:12px}.process h3{margin:10px 0 6px;color:#fff;font-size:20px}.process p{margin:0;color:#b9c6cf;font-size:14px}
+/* Pricing */
+.pricing{background:#fff}.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.price-card{position:relative;border:1px solid var(--line);border-radius:23px;padding:31px;background:#fff;display:flex;flex-direction:column;box-shadow:0 15px 45px rgba(7,26,45,.055)}.price-card.featured{border:2px solid var(--gold);transform:translateY(-10px);box-shadow:0 25px 65px rgba(7,26,45,.12)}.badge{position:absolute;top:-14px;left:25px;background:var(--gold);color:var(--navy);padding:7px 13px;border-radius:999px;font-size:10px;font-weight:950;letter-spacing:1px}.price-card h3{font-size:25px;color:var(--navy);margin:0}.price-sub{color:var(--muted);min-height:50px;font-size:14px}.price{font-size:40px;font-weight:950;color:var(--navy);letter-spacing:-1px}.price-desc{font-size:12px;color:var(--muted);margin-bottom:17px}.price-list{list-style:none;padding:0;margin:0 0 22px;flex:1}.price-list li{padding:8px 0;color:#46545e;font-size:14px;border-bottom:1px solid #f0f1f1}.price-list li:before{content:"✓";color:var(--gold);font-weight:950;margin-right:9px}.price-btn{display:flex;justify-content:center;padding:14px;border-radius:11px;background:var(--navy);color:#fff;text-decoration:none;font-weight:900}.featured .price-btn{background:var(--gold);color:var(--navy)}
+/* Contact */
+.contact-section{background:var(--cream)}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}.contact-left h2{font-size:clamp(37px,4.5vw,58px);line-height:1.04;letter-spacing:-1.7px;margin:14px 0}.contact-left>p{color:var(--muted);font-size:17px}.contact-points{margin-top:30px;display:grid;gap:11px}.contact-point{display:flex;gap:12px;align-items:center;font-weight:800;color:var(--navy)}.contact-point b{width:38px;height:38px;border-radius:11px;background:#fff;display:grid;place-items:center}.contact-box{background:#fff;border-radius:24px;padding:30px;border:1px solid #e6e3da;box-shadow:0 20px 55px rgba(7,26,45,.08)}.contact-box h3{margin:0 0 7px;color:var(--navy);font-size:24px}.contact-box>p{color:var(--muted);margin:0 0 20px}.contact-methods{display:grid;gap:10px}.contact-method{display:flex;align-items:center;gap:14px;padding:15px;border:1px solid var(--line);border-radius:14px;text-decoration:none;transition:.2s}.contact-method:hover{border-color:var(--gold);transform:translateY(-1px)}.contact-method-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#f3f7fa;font-size:20px}.contact-method strong{display:block;color:var(--navy);font-size:14px}.contact-method span{display:block;color:var(--muted);font-size:12px}.contact-form{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);display:grid;gap:10px}.contact-form label{font-size:12px;font-weight:900;color:var(--navy)}.contact-form input,.contact-form textarea{width:100%;padding:13px 14px;border:1px solid #dfe3e6;border-radius:11px;font:inherit;outline:none}.contact-form input:focus,.contact-form textarea:focus{border-color:var(--gold)}.contact-form textarea{min-height:115px;resize:vertical}.contact-submit{border:0;cursor:pointer;width:100%;font:inherit}.form-note{font-size:11px!important;color:#7a858d!important;margin:0!important}
+/* FAQ / footer */
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.faq{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.faq summary{cursor:pointer;font-weight:900;color:var(--navy)}.faq p{color:var(--muted);font-size:14px;margin:12px 0 0}.footer{background:#041322;color:#aebdc7;padding:35px 0}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center}.footer-brand{color:#fff;font-weight:900;font-size:19px}.footer-brand span{color:var(--gold)}.footer a{color:#dbe3e8;text-decoration:none;margin-left:18px;font-size:13px}.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;background:#1faf5b;color:#fff;text-decoration:none;padding:13px 17px;border-radius:999px;box-shadow:0 15px 35px rgba(0,0,0,.22);font-weight:900;font-size:13px}
+@media(max-width:950px){.nav-links{display:none}.menu{display:block}.hero-grid,.feature,.contact-grid{grid-template-columns:1fr}.hero-video{margin:0 auto}.value-grid,.price-grid{grid-template-columns:1fr}.price-card.featured{transform:none}.process-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr}.hero{min-height:auto}.hero-trust{margin-top:32px}}
+@media(max-width:600px){.nav{height:68px}.brand-name{font-size:17px}.brand-mark{width:37px;height:37px}.hero{padding-top:105px}.hero h1{letter-spacing:-1.8px}.hero-copy>p{font-size:17px}.section{padding:75px 0}.hero-video{width:100%;max-width:360px}.process-grid{grid-template-columns:1fr}.footer-grid{flex-direction:column;align-items:flex-start}.footer a{margin:0 16px 0 0}.float-wa{right:14px;bottom:14px}.hero-actions .btn{width:100%}}
 </style>
 
-<!-- MRExcellence Analytics (GA4)
-     1) Create a Google Analytics 4 property.
-     2) Replace G-XXXXXXXXXX below with your Measurement ID.
-     3) Keep this script in the <head>.
--->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZR1LTWP85"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-0ZR1LTWP85', {
-    anonymize_ip: true
-  });
-
-  // Track WhatsApp button clicks
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
-      link.addEventListener('click', function () {
-        gtag('event', 'whatsapp_click', {
-          event_category: 'engagement',
-          event_label: 'MRExcellence WhatsApp'
-        });
-      });
-    });
-  });
-</script>
-
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-0ZR1LTWP85',{anonymize_ip:true});</script>
 </head>
 <body>
+<header class="site-header"><div class="container nav"><a class="brand" href="#top"><span class="brand-mark">MR</span><span class="brand-name">MR<span>Excellence</span></span></a><nav class="nav-links"><a href="#services">Services</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a class="nav-cta" href="#contact">Parler à l'équipe</a></nav><button class="menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button></div></header>
 
-<!-- MRExcellence entry notification -->
-<div class="price-notice" id="priceNotice" role="dialog" aria-label="Accompagnement MRExcellence">
-  <button class="close-notice" id="closeNotice" aria-label="Fermer">×</button>
-  <div class="notice-tag">MRExcellence</div>
-  <h3>Vous achetez au Maroc depuis l'étranger ?</h3>
-  <p>Ne prenez pas une décision immobilière importante à distance sans vérification. Découvrez l'accompagnement adapté à votre projet.</p>
-  <a href="#tarifs" id="noticeCta">Découvrir nos accompagnements</a>
-</div>
+<main id="top">
+<section class="hero"><div class="container hero-grid"><div class="hero-copy"><div class="eyebrow">Vérification & accompagnement indépendant</div><h1>Achetez au Maroc.<br><em>Même à distance.</em></h1><p>MR Excellence vous accompagne sur place pour visiter, vérifier et documenter votre projet immobilier au Maroc — avec une vision claire avant de vous engager.</p><div class="hero-actions"><a class="btn btn-gold" href="#contact">Parler de mon projet →</a><a class="btn btn-ghost" href="#services">Découvrir notre méthode</a></div><div class="hero-trust"><div class="trust-item"><strong>Sur place</strong><span>au Maroc</span></div><div class="trust-item"><strong>À distance</strong><span>pour les MRE</span></div><div class="trust-item"><strong>Rapport</strong><span>photos & vidéo</span></div></div></div><div class="hero-video"><div class="video-frame"><video controls autoplay muted loop playsinline preload="metadata" poster="video-poster.jpg"><source src="mr-excellence-visite-distance.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la vidéo.</video></div><div class="video-label"><span>Visite immobilière à distance</span><span>MR Excellence</span></div></div></div></section>
 
-<nav><div class="logo">MR<span>Excellence</span></div><div class="links"><a href="#services">Services</a><a href="#tarifs">Tarifs</a><a href="#methode">Méthode</a><a href="#contact">Contact</a></div></nav>
+<section class="section section-soft" id="services"><div class="container"><div class="section-head"><div class="eyebrow">Notre accompagnement</div><h2>Vous êtes loin du Maroc.<br>Nous vérifions sur place.</h2><p>Un service pensé pour les MRE qui veulent avancer avec des informations concrètes, des images réelles et une coordination claire.</p></div><div class="value-grid"><article class="value-card"><span class="value-num">01 / VISITE</span><div class="value-icon">⌖</div><h3>Visite & vérification</h3><p>Nous nous déplaçons sur place pour observer le bien et les éléments importants de votre projet.</p></article><article class="value-card"><span class="value-num">02 / PREUVES</span><div class="value-icon">◉</div><h3>Photos, vidéo & rapport</h3><p>Vous recevez des éléments visuels et un compte-rendu structuré pour mieux décider à distance.</p></article><article class="value-card"><span class="value-num">03 / COORDINATION</span><div class="value-icon">↗</div><h3>Professionnels adaptés</h3><p>Selon votre dossier, nous facilitons la coordination avec notaire, avocat et autres intervenants.</p></article></div></div></section>
 
-<header class="hero">
-<div class="hero-inner">
-  <div class="hero-copy">
-    <div class="tag">Vérification & accompagnement indépendant pour MRE</div>
-    <h1>Achetez votre bien au Maroc, en toute confiance.</h1>
-    <p>Même à distance. Sans mauvaise surprise. MRExcellence vous accompagne sur place pour vérifier votre projet immobilier avant votre décision.</p>
-    <a class="btn primary" href="https://wa.me/212728978449" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
-    <a class="btn secondary" href="#services">Découvrir nos services</a>
-  </div>
-  <div class="hero-video">
-    <div class="hero-video-card">
-      <video controls autoplay muted loop playsinline preload="metadata" poster="video-poster.jpg">
-        <source src="mr-excellence-visite-distance.mp4" type="video/mp4">
-        Votre navigateur ne prend pas en charge la lecture vidéo.
-      </video>
-    </div>
-    <div class="hero-video-caption">MRExcellence • Visite immobilière à distance</div>
-  </div>
-</div>
-</header>
+<section class="section"><div class="container feature"><div class="feature-visual"><div class="quote-card"><strong>Votre projet. Votre décision.</strong><p>Notre rôle est de vous donner une vision plus claire du bien et des vérifications à effectuer. La décision finale vous appartient.</p></div></div><div class="feature-copy"><div class="eyebrow">Pourquoi MR Excellence</div><h2>Une présence locale quand vous ne pouvez pas être là.</h2><ul class="check-list"><li><span class="check">✓</span><span>Échange initial pour comprendre votre projet et vos priorités.</span></li><li><span class="check">✓</span><span>Visite du bien avec photos et vidéo datées.</span></li><li><span class="check">✓</span><span>Vérification des documents selon la mission choisie.</span></li><li><span class="check">✓</span><span>Rapport clair pour vous aider à avancer à distance.</span></li></ul><a class="btn btn-gold" style="background:var(--navy);color:#fff" href="#tarifs">Voir les accompagnements →</a></div></div></section>
 
-<section id="services"><div class="container">
-<h2>Une vérification indépendante, sur place</h2>
-<p class="intro">Vous êtes MRE et vous envisagez d'acheter un bien au Maroc ? Nous vous aidons à prendre votre décision avec des informations concrètes recueillies sur place.</p>
-<div class="grid">
-<div class="card"><div class="icon">📍</div><h3>Visite & vérification</h3><p>Visite du bien sur place pour vérifier les éléments importants avant votre décision.</p></div>
-<div class="card"><div class="icon">📸</div><h3>Photos, vidéo & rapport</h3><p>Recevez des photos, une vidéo et un rapport détaillé afin de mieux évaluer le bien à distance.</p></div>
-<div class="card"><div class="icon">🤝</div><h3>Coordination professionnelle</h3><p>Coordination avec le notaire, l'avocat et des experts indépendants selon les besoins de votre projet.</p></div>
-</div>
-</div></section>
+<section class="section section-dark" id="methode"><div class="container"><div class="section-head"><div class="eyebrow">Notre méthode</div><h2>Simple, structurée, transparente.</h2><p>De votre première demande jusqu'au rapport, chaque étape est pensée pour vous donner les informations utiles.</p></div><div class="process-grid"><div class="process"><span>01 — ÉCHANGE</span><h3>Comprendre</h3><p>Votre projet, votre budget, votre bien et vos priorités.</p></div><div class="process"><span>02 — VISITE</span><h3>Observer</h3><p>Présence sur place et vérification des éléments convenus.</p></div><div class="process"><span>03 — RAPPORT</span><h3>Documenter</h3><p>Photos, vidéo et synthèse claire de la mission.</p></div><div class="process"><span>04 — SUIVI</span><h3>Coordonner</h3><p>Échange sur les résultats et prochaines étapes.</p></div></div></div></section>
 
+<section class="section pricing" id="tarifs"><div class="container"><div class="section-head"><div class="eyebrow">Accompagnement MR Excellence</div><h2>Choisissez le niveau qui correspond à votre projet.</h2><p>De la première consultation à l'accompagnement complet.</p></div><div class="price-grid"><article class="price-card"><h3>Découverte</h3><p class="price-sub">Pour poser vos questions avant tout engagement.</p><div class="price">600 MAD</div><div class="price-desc">Service de 45 min • Paiement en ligne</div><ul class="price-list"><li>Appel vidéo ou téléphonique de 45 min</li><li>Analyse de votre projet</li><li>Orientation sur les prochaines étapes</li><li>Réponses à vos questions</li><li>Compte-rendu écrit</li></ul><a class="price-btn paypal-btn" data-plan="decouverte" href="#">Réserver ma consultation</a></article><article class="price-card"><h3>Standard</h3><p class="price-sub">Vérification complète d'un bien avant engagement.</p><div class="price">4 000 MAD</div><div class="price-desc">Vérification complète • Paiement en ligne</div><ul class="price-list"><li>Tout le niveau Découverte</li><li>Visite du bien sur place</li><li>Photos et vidéos datées</li><li>Vérification des documents convenus</li><li>Rapport de mission PDF</li><li>Suivi jusqu'à votre décision</li></ul><a class="price-btn paypal-btn" data-plan="standard" href="#">Réserver mon accompagnement</a></article><article class="price-card featured"><div class="badge">LE PLUS COMPLET</div><h3>Premium</h3><p class="price-sub">Accompagnement complet jusqu'à la signature.</p><div class="price">10 000 MAD</div><div class="price-desc">Accompagnement complet • Paiement en ligne</div><ul class="price-list"><li>Tout le niveau Standard</li><li>Coordination avec notaire et avocat</li><li>Relecture procuration & promesse</li><li>Suivi du transfert de fonds</li><li>Présence à distance jusqu'à l'acte</li><li>Disponibilité prioritaire</li></ul><a class="price-btn paypal-btn" data-plan="premium" href="#">Choisir Premium</a></article></div></div></section>
 
-<!-- MRExcellence pricing -->
-<section class="pricing" id="tarifs">
-  <div class="container">
-    <div class="pricing-header">
-      <div class="tag" style="color:var(--gold)">ACCOMPAGNEMENT MRExcellence</div>
-      <h2>Choisissez votre niveau d'accompagnement</h2>
-      <p>Des solutions adaptées à votre besoin, de la première consultation à l'accompagnement complet.</p>
-    </div>
+<section class="section section-soft" id="faq"><div class="container"><div class="section-head"><div class="eyebrow">Questions fréquentes</div><h2>Les réponses avant de commencer.</h2></div><div class="faq-grid"><details class="faq"><summary>Est-ce que je dois être au Maroc ?</summary><p>Non. Le principe du service est justement de vous permettre d'avoir une présence et des éléments vérifiés sur place pendant que vous êtes à distance.</p></details><details class="faq"><summary>Est-ce que la visite comprend des photos et une vidéo ?</summary><p>Oui, selon la mission choisie, des photos et une vidéo peuvent être fournies avec le rapport.</p></details><details class="faq"><summary>Est-ce que vous prenez la décision à ma place ?</summary><p>Non. MR Excellence fournit un accompagnement indépendant et des informations de terrain. La décision finale vous appartient.</p></details><details class="faq"><summary>Comment commencer ?</summary><p>Écrivez-nous sur WhatsApp, par Gmail ou utilisez le formulaire ci-dessous. Nous pourrons comprendre votre projet et vous orienter vers la formule adaptée.</p></details></div></div></section>
 
-    <div class="price-grid">
+<section class="section contact-section" id="contact"><div class="container contact-grid"><div class="contact-left"><div class="eyebrow">Contact MR Excellence</div><h2>Parlons de votre projet immobilier.</h2><p>Un bien à vérifier, une question ou un projet d'achat au Maroc ? Choisissez le moyen de contact qui vous convient.</p><div class="contact-points"><div class="contact-point"><b>✓</b> Réponse personnalisée</div><div class="contact-point"><b>↗</b> Échange à distance</div><div class="contact-point"><b>⌂</b> Présence au Maroc</div></div></div><div class="contact-box"><h3>Contactez notre équipe</h3><p>Choisissez WhatsApp, Gmail ou envoyez directement votre demande depuis le site.</p><div class="contact-methods"><a class="contact-method" href="https://wa.me/212728978449" target="_blank" rel="noopener"><div class="contact-method-icon">💬</div><div><strong>WhatsApp — Réponse directe</strong><span>Ouvrir WhatsApp et nous écrire</span></div></a><a class="contact-method" href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.mrexellence@gmail.com&su=Demande%20d%27information%20%E2%80%94%20MRExcellence" target="_blank" rel="noopener"><div class="contact-method-icon">✉️</div><div><strong>Gmail — Écrire à notre équipe</strong><span>Gmail s'ouvre avec notre adresse renseignée</span></div></a></div><form class="contact-form" action="https://formsubmit.co/contact.mrexellence@gmail.com" method="POST"><input type="hidden" name="_subject" value="Nouvelle demande depuis le site MRExcellence"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://mrexcellencesite.vercel.app/#contact"><label for="email">Votre adresse e-mail</label><input id="email" type="email" name="email" placeholder="exemple@gmail.com" autocomplete="email" required><label for="message">Votre message</label><textarea id="message" name="message" placeholder="Décrivez votre projet ou votre question..." required></textarea><button class="btn btn-gold contact-submit" type="submit">📩 Envoyer ma demande</button><p class="form-note">Votre adresse e-mail nous permet de vous répondre directement.</p></form></div></div></section>
+</main>
 
-      <article class="price-card">
-        <h3>Découverte</h3>
-        <p class="price-subtitle">Pour poser vos questions avant tout engagement.</p>
-        <div class="price">600 MAD</div>
-        <div class="price-eur">Service de 45 min • Paiement en ligne</div>
-        <ul class="price-list">
-          <li>Appel vidéo ou téléphonique de 45 min</li>
-          <li>Analyse de votre projet d'achat</li>
-          <li>Orientation sur les prochaines étapes</li>
-          <li>Réponses à toutes vos questions</li>
-          <li>Compte-rendu écrit après l'appel</li>
-        </ul>
-        <p class="price-note">Idéal pour un premier avis.</p>
-        <a class="price-btn paypal-btn" data-plan="decouverte" href="#">Réserver ma consultation</a>
-      </article>
-
-      <article class="price-card">
-        <h3>Standard</h3>
-        <p class="price-subtitle">Vérification complète d'un bien avant engagement.</p>
-        <div class="price">4 000 MAD</div>
-        <div class="price-eur">Vérification complète • Paiement en ligne</div>
-        <ul class="price-list">
-          <li>Tout le niveau Découverte, inclus</li>
-          <li>Visite du bien sur place</li>
-          <li>Photos et vidéos datées</li>
-          <li>Vérification des documents : titre, hypothèque, urbanisme</li>
-          <li>Rapport de mission complet PDF</li>
-          <li>Suivi jusqu'à votre décision</li>
-        </ul>
-        <p class="price-note">Le bon équilibre protection / prix.</p>
-        <a class="price-btn paypal-btn" data-plan="standard" href="#">Réserver mon accompagnement</a>
-      </article>
-
-      <article class="price-card featured">
-        <div class="price-badge">LE PLUS CHOISI</div>
-        <h3>Premium</h3>
-        <p class="price-subtitle">Accompagnement complet jusqu'à la signature.</p>
-        <div class="price">10 000 MAD</div>
-        <div class="price-eur">Accompagnement complet • Paiement en ligne</div>
-        <ul class="price-list">
-          <li>Tout le niveau Standard, inclus</li>
-          <li>Coordination avec notaire et avocat</li>
-          <li>Relecture procuration & promesse de vente</li>
-          <li>Suivi du transfert de fonds</li>
-          <li>Présence à distance jusqu'à l'acte</li>
-          <li>Disponibilité prioritaire — réponse sous 24h</li>
-        </ul>
-        <p class="price-note">Pour acheter l'esprit tranquille.</p>
-        <a class="price-btn paypal-btn" data-plan="premium" href="#">Choisir l'accompagnement Premium</a>
-      </article>
-
-    </div>
-
-    <p class="pricing-disclaimer">
-      Les tarifs sont indicatifs et peuvent évoluer selon la complexité du dossier.
-      Un devis précis est confirmé avant le début de la mission.
-    </p>
-  </div>
-</section>
-
-<section class="dark" id="methode"><div class="container">
-<h2>Vous décidez. Les professionnels sécurisent.</h2>
-<p>Notre rôle est de vous accompagner et de vous donner une vision claire du bien et des vérifications à effectuer. La décision finale vous appartient.</p>
-<div class="steps">
-<div class="step"><div class="num">01 — ÉCHANGE</div><p>Comprendre votre projet et vos besoins.</p></div>
-<div class="step"><div class="num">02 — VISITE</div><p>Vérifier le bien directement sur place.</p></div>
-<div class="step"><div class="num">03 — RAPPORT</div><p>Photos, vidéo et rapport détaillé.</p></div>
-<div class="step"><div class="num">04 — COORDINATION</div><p>Mettre en relation les professionnels nécessaires.</p></div>
-</div>
-</div></section>
-
-<section id="contact">
-  <div class="container contact">
-    <div>
-      <div class="tag" style="color:var(--gold)">CONTACT MRExcellence</div>
-      <h2>Parlons de votre projet immobilier.</h2>
-      <p>Une question, un bien à vérifier ou un projet d'achat au Maroc ? Choisissez le moyen de contact qui vous convient.</p>
-    </div>
-
-    <div class="contactbox">
-      <h3>Contactez-nous directement</h3>
-      <p class="contact-intro">Notre équipe vous répond et vous accompagne selon votre besoin.</p>
-
-      <div class="contact-methods">
-        <a class="contact-method whatsapp" href="https://wa.me/212728978449" target="_blank" rel="noopener" aria-label="Contacter MRExcellence sur WhatsApp">
-          <div class="contact-method-icon">💬</div>
-          <div><strong>WhatsApp — Réponse directe</strong><span>Ouvrir WhatsApp et nous envoyer un message</span></div>
-        </a>
-
-        <a class="contact-method email" href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.mrexellence@gmail.com&su=Demande%20d%27information%20%E2%80%94%20MRExcellence" target="_blank" rel="noopener" aria-label="Écrire à MRExcellence avec Gmail">
-          <div class="contact-method-icon">✉️</div>
-          <div><strong>Gmail — Écrire à notre équipe</strong><span>Ouvrir Gmail avec notre adresse déjà renseignée</span></div>
-        </a>
-      </div>
-
-      <div class="contact-form-wrap">
-        <div class="contact-form-title">Vous préférez nous écrire ici ?</div>
-        <p class="contact-form-subtitle">Entrez votre adresse e-mail et votre message. Nous le recevrons directement.</p>
-
-        <form class="contact-form" action="https://formsubmit.co/contact.mrexellence@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Nouvelle demande depuis le site MRExcellence">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://mrexcellencesite.vercel.app/#contact">
-
-          <label for="client-email">Votre adresse e-mail</label>
-          <input id="client-email" type="email" name="email" placeholder="exemple@gmail.com" autocomplete="email" required>
-
-          <label for="client-message">Votre message</label>
-          <textarea id="client-message" name="message" placeholder="Décrivez votre projet ou votre question..." required></textarea>
-
-          <button class="btn primary contact-submit" type="submit">📩 Envoyer ma demande</button>
-          <p class="form-note">Votre adresse e-mail sera utilisée pour pouvoir vous répondre.</p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>© 2026 MRExcellence — Accompagnement indépendant pour MRE</footer>
+<footer class="footer"><div class="container footer-grid"><div><div class="footer-brand">MR<span>Excellence</span></div><div style="font-size:12px;margin-top:4px">Accompagnement indépendant pour MRE</div></div><div><a href="#services">Services</a><a href="#tarifs">Tarifs</a><a href="#contact">Contact</a></div><div style="font-size:12px">© 2026 MR Excellence</div></div></footer>
+<a class="float-wa" href="https://wa.me/212728978449" target="_blank" rel="noopener">💬 WhatsApp</a>
 
 <script>
-/*
-  ===== PAYPAL PAYMENT LINKS =====
-  MRExcellence payment links.
-*/
-const PAYPAL_LINKS = {
-  decouverte: "https://www.paypal.com/ncp/payment/ZW5Z7CMVKBFCS",
-  standard: "https://www.paypal.com/ncp/payment/M4K7PVZNTSPTC",
-  premium: "https://www.paypal.com/ncp/payment/LGNY3QR5C3VY4"
-};
-
-document.addEventListener("DOMContentLoaded", function () {
-  const notice = document.getElementById("priceNotice");
-  const closeNotice = document.getElementById("closeNotice");
-  const noticeCta = document.getElementById("noticeCta");
-
-  if (notice && !sessionStorage.getItem("mrexcellence_notice_seen")) {
-    setTimeout(() => notice.classList.add("show"), 900);
-  }
-
-  function hideNotice() {
-    if (!notice) return;
-    notice.classList.remove("show");
-    sessionStorage.setItem("mrexcellence_notice_seen", "1");
-  }
-
-  closeNotice?.addEventListener("click", hideNotice);
-  noticeCta?.addEventListener("click", hideNotice);
-
-  document.querySelectorAll(".paypal-btn").forEach(function (button) {
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      const plan = button.dataset.plan;
-      const url = PAYPAL_LINKS[plan];
-
-      if (url) {
-        window.location.href = url;
-      }
-    });
-  });
-});</script>
-
+const PAYPAL_LINKS={decouverte:"https://www.paypal.com/ncp/payment/ZW5Z7CMVKBFCS",standard:"https://www.paypal.com/ncp/payment/M4K7PVZNTSPTC",premium:"https://www.paypal.com/ncp/payment/LGNY3QR5C3VY4"};
+document.querySelectorAll('.paypal-btn').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();const url=PAYPAL_LINKS[btn.dataset.plan];if(url)location.href=url;}));
+const nav=document.querySelector('.nav-links');document.querySelector('.menu')?.addEventListener('click',()=>nav.classList.toggle('mobile-open'));
+</script>
+<style>.mobile-open{display:flex!important;position:absolute;top:68px;left:0;right:0;background:var(--navy);padding:18px 6%;flex-direction:column;gap:16px;border-top:1px solid rgba(255,255,255,.1)}.mobile-open .nav-cta{width:max-content}</style>
 </body>
 </html>
