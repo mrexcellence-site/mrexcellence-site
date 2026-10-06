@@ -10,7 +10,15 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}a{color:inherit}
 .container{width:min(1180px,92%);margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--gold);font-weight:900;font-size:12px;letter-spacing:2px;text-transform:uppercase}.eyebrow:before{content:"";width:26px;height:2px;background:var(--gold)}
 /* Header */
-.site-header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(7,26,45,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff}.brand-mark{width:42px;height:42px;border:1px solid rgba(216,177,95,.7);border-radius:50%;display:grid;place-items:center;font-weight:950;color:var(--gold);font-size:13px}.brand-name{font-size:20px;font-weight:900;letter-spacing:.2px}.brand-name span{color:var(--gold)}.nav-links{display:flex;gap:28px;align-items:center}.nav-links a{color:#f5f7f9;text-decoration:none;font-size:14px;font-weight:750}.nav-cta{padding:11px 17px;border-radius:999px;background:var(--gold);color:var(--navy)!important}.menu{display:none;color:#fff;background:none;border:0;font-size:27px}
+.site-header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(7,26,45,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;min-width:0}
+.brand-logo{width:48px;height:48px;object-fit:contain;display:block;border-radius:50%;flex:0 0 auto}
+.brand-name{font-size:20px;font-weight:950;letter-spacing:.1px;white-space:nowrap;line-height:1}
+.brand-white{color:#fff}.brand-gold{color:var(--gold)}
+.nav-links{display:flex;gap:28px;align-items:center}.nav-links a{color:#f5f7f9;text-decoration:none;font-size:14px;font-weight:750}
+.nav-cta{padding:11px 17px;border-radius:999px;background:var(--gold);color:var(--navy)!important}
+.menu{display:none;color:#fff;background:none;border:0;font-size:27px}
 /* Hero */
 .hero{min-height:780px;padding:130px 0 78px;background:radial-gradient(circle at 76% 25%,#214965 0,transparent 32%),linear-gradient(135deg,#061a2d,#0c2a43 62%,#071a2d);color:#fff;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}.hero h1{font-size:clamp(45px,6.1vw,78px);line-height:1.02;letter-spacing:-2.8px;margin:18px 0 22px;max-width:760px}.hero h1 em{font-style:normal;color:var(--gold2)}.hero-copy>p{font-size:19px;color:#dce5eb;max-width:670px;margin:0 0 26px}.hero-actions{display:flex;flex-wrap:wrap;gap:11px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 21px;border-radius:10px;text-decoration:none;font-weight:900;border:1px solid transparent;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-gold{background:var(--gold);color:var(--navy)}.btn-ghost{border-color:rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.04)}
 .hero-video{max-width:470px;margin-left:auto}.video-frame{padding:8px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);border-radius:28px;box-shadow:0 35px 90px rgba(0,0,0,.38)}.video-frame video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#02070c;border-radius:20px}.video-label{display:flex;justify-content:space-between;gap:15px;margin:13px 6px 0;color:#cbd7de;font-size:12px}.hero-trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:45px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12)}.trust-item strong{display:block;font-size:20px;color:#fff}.trust-item span{font-size:12px;color:#aebdc7}
@@ -207,13 +215,32 @@
   .guide-visual{min-height:350px}
 }
 
+
+@media (max-width: 860px){
+  .brand-logo{width:45px;height:45px;flex-basis:45px}
+  .brand-name{font-size:18px}
+  .brand-tagline{font-size:6.8px}
+  .brand-rule{width:70px;margin:4px 0 3px}
+}
+@media (max-width: 560px){
+  .brand-logo{width:42px;height:42px;flex-basis:42px}
+  .brand-name{font-size:17px}
+  .brand-tagline{font-size:6.1px}
+}
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZR1LTWP85"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-0ZR1LTWP85',{anonymize_ip:true});</script>
 </head>
 <body>
-<header class="site-header"><div class="container nav"><a class="brand" href="#top"><span class="brand-mark">MR</span><span class="brand-name">MR<span>Excellence</span></span></a><nav class="nav-links"><a href="#services">Services</a><a href="#guide">Guide MRE</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a class="nav-cta" href="#contact">Parler à l'équipe</a></nav><button class="menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button></div></header>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="#top" aria-label="MR Excellence — Accueil">
+  <img class="brand-logo" src="mr-excellence-house-circle.png" alt="MR Excellence">
+  <span class="brand-name"><span class="brand-white">MR</span><span class="brand-gold">Excellence</span></span>
+</a>
+<nav class="nav-links"><a href="#services">Services</a><a href="#guide">Guide MRE</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a class="nav-cta" href="#contact">Parler à l'équipe</a></nav>
+<button class="menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
+</div></header>
 
 <main id="top">
 <section class="hero"><div class="container hero-grid"><div class="hero-copy"><div class="eyebrow">Vérification & accompagnement indépendant</div><h1>Achetez au Maroc.<br><em>Décidez avec confiance.</em></h1><p>Vous êtes à l'étranger ? MR Excellence vous accompagne sur place pour visiter, vérifier et documenter votre projet immobilier au Maroc — avec une vision claire avant de vous engager.</p><div class="hero-actions"><a class="btn btn-gold" href="#contact">Parler de mon projet →</a><a class="btn btn-ghost" href="#services">Découvrir notre méthode</a></div><div class="hero-trust"><div class="trust-item"><strong>Sur place</strong><span>au Maroc</span></div><div class="trust-item"><strong>À distance</strong><span>pour les MRE</span></div><div class="trust-item"><strong>Rapport</strong><span>photos & vidéo</span></div></div></div><div class="hero-video"><div class="video-frame"><video controls autoplay muted loop playsinline preload="metadata" poster="video-poster.jpg"><source src="mr-excellence-visite-distance.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la vidéo.</video></div><div class="video-label"><span>Visite immobilière à distance · Vidéo complète</span><span>MR Excellence</span></div></div></div></section>
