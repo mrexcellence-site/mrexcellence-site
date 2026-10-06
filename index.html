@@ -25,6 +25,28 @@
 .pricing{background:#fff}.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.price-card{position:relative;border:1px solid var(--line);border-radius:23px;padding:31px;background:#fff;display:flex;flex-direction:column;box-shadow:0 15px 45px rgba(7,26,45,.055)}.price-card.featured{border:2px solid var(--gold);transform:translateY(-10px);box-shadow:0 25px 65px rgba(7,26,45,.12)}.badge{position:absolute;top:-14px;left:25px;background:var(--gold);color:var(--navy);padding:7px 13px;border-radius:999px;font-size:10px;font-weight:950;letter-spacing:1px}.price-card h3{font-size:25px;color:var(--navy);margin:0}.price-sub{color:var(--muted);min-height:50px;font-size:14px}.price{font-size:40px;font-weight:950;color:var(--navy);letter-spacing:-1px}.price-desc{font-size:12px;color:var(--muted);margin-bottom:17px}.price-list{list-style:none;padding:0;margin:0 0 22px;flex:1}.price-list li{padding:8px 0;color:#46545e;font-size:14px;border-bottom:1px solid #f0f1f1}.price-list li:before{content:"✓";color:var(--gold);font-weight:950;margin-right:9px}.price-btn{display:flex;justify-content:center;padding:14px;border-radius:11px;background:var(--navy);color:#fff;text-decoration:none;font-weight:900}.featured .price-btn{background:var(--gold);color:var(--navy)}
 /* Contact */
 .contact-section{background:var(--cream)}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}.contact-left h2{font-size:clamp(37px,4.5vw,58px);line-height:1.04;letter-spacing:-1.7px;margin:14px 0}.contact-left>p{color:var(--muted);font-size:17px}.contact-points{margin-top:30px;display:grid;gap:11px}.contact-point{display:flex;gap:12px;align-items:center;font-weight:800;color:var(--navy)}.contact-point b{width:38px;height:38px;border-radius:11px;background:#fff;display:grid;place-items:center}.contact-box{background:#fff;border-radius:24px;padding:30px;border:1px solid #e6e3da;box-shadow:0 20px 55px rgba(7,26,45,.08)}.contact-box h3{margin:0 0 7px;color:var(--navy);font-size:24px}.contact-box>p{color:var(--muted);margin:0 0 20px}.contact-methods{display:grid;gap:10px}.contact-method{display:flex;align-items:center;gap:14px;padding:15px;border:1px solid var(--line);border-radius:14px;text-decoration:none;transition:.2s}.contact-method:hover{border-color:var(--gold);transform:translateY(-1px)}.contact-method-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#f3f7fa;font-size:20px}.contact-method strong{display:block;color:var(--navy);font-size:14px}.contact-method span{display:block;color:var(--muted);font-size:12px}.contact-form{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);display:grid;gap:10px}.contact-form label{font-size:12px;font-weight:900;color:var(--navy)}.contact-form input,.contact-form textarea{width:100%;padding:13px 14px;border:1px solid #dfe3e6;border-radius:11px;font:inherit;outline:none}.contact-form input:focus,.contact-form textarea:focus{border-color:var(--gold)}.contact-form textarea{min-height:115px;resize:vertical}.contact-submit{border:0;cursor:pointer;width:100%;font:inherit}.form-note{font-size:11px!important;color:#7a858d!important;margin:0!important}
+
+/* Guide MRE */
+.guide-section{background:linear-gradient(135deg,#f7f5ef 0%,#eef4f8 100%);position:relative;overflow:hidden}
+.guide-card{display:grid;grid-template-columns:.78fr 1.22fr;gap:48px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:0 22px 65px rgba(7,26,45,.09)}
+.guide-cover{min-height:360px;border-radius:22px;background:linear-gradient(145deg,#0c2a43,#1c5b80);display:flex;align-items:center;justify-content:center;padding:28px;position:relative;overflow:hidden;box-shadow:0 20px 45px rgba(7,26,45,.18)}
+.guide-cover:before{content:"MRE";position:absolute;font-size:180px;font-weight:950;color:rgba(255,255,255,.06);right:-12px;top:15px}
+.guide-cover-inner{position:relative;z-index:1;width:100%;max-width:300px;background:rgba(255,255,255,.96);border-radius:14px;padding:27px 22px;box-shadow:0 18px 45px rgba(0,0,0,.2)}
+.guide-cover-kicker{font-size:10px;letter-spacing:1.7px;font-weight:950;color:var(--gold);text-transform:uppercase}
+.guide-cover h3{font-size:28px;line-height:1.08;color:var(--navy);margin:12px 0}
+.guide-cover p{margin:0;color:var(--muted);font-size:13px}
+.guide-copy h2{font-size:clamp(34px,4.2vw,54px);line-height:1.05;letter-spacing:-1.5px;margin:14px 0}
+.guide-copy>p{font-size:17px;color:var(--muted);max-width:680px}
+.guide-points{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 18px;margin:24px 0}
+.guide-point{display:flex;gap:10px;align-items:flex-start;color:#3d4b56;font-size:14px}
+.guide-point b{color:var(--gold);font-size:17px;line-height:1}
+.guide-note{font-size:12px;color:#7a858d;margin:16px 0 0}
+.guide-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:20px}
+.guide-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border-radius:10px;text-decoration:none;font-weight:900;background:var(--navy);color:#fff;transition:.2s}
+.guide-btn:hover{transform:translateY(-2px);background:var(--navy2)}
+@media(max-width:950px){.guide-card{grid-template-columns:1fr}.guide-cover{min-height:300px}.guide-cover-inner{max-width:280px}}
+@media(max-width:600px){.guide-card{padding:22px}.guide-points{grid-template-columns:1fr}.guide-actions .guide-btn{width:100%}}
+
 /* FAQ / footer */
 .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.faq{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.faq summary{cursor:pointer;font-weight:900;color:var(--navy)}.faq p{color:var(--muted);font-size:14px;margin:12px 0 0}.footer{background:#041322;color:#aebdc7;padding:35px 0}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center}.footer-brand{color:#fff;font-weight:900;font-size:19px}.footer-brand span{color:var(--gold)}.footer a{color:#dbe3e8;text-decoration:none;margin-left:18px;font-size:13px}.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;background:#1faf5b;color:#fff;text-decoration:none;padding:13px 17px;border-radius:999px;box-shadow:0 15px 35px rgba(0,0,0,.22);font-weight:900;font-size:13px}
 @media(max-width:950px){.nav-links{display:none}.menu{display:block}.hero-grid,.feature,.contact-grid{grid-template-columns:1fr}.hero-video{margin:0 auto}.value-grid,.price-grid{grid-template-columns:1fr}.price-card.featured{transform:none}.process-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr}.hero{min-height:auto}.hero-trust{margin-top:32px}}
@@ -35,12 +57,55 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-0ZR1LTWP85',{anonymize_ip:true});</script>
 </head>
 <body>
-<header class="site-header"><div class="container nav"><a class="brand" href="#top"><span class="brand-mark">MR</span><span class="brand-name">MR<span>Excellence</span></span></a><nav class="nav-links"><a href="#services">Services</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a class="nav-cta" href="#contact">Parler à l'équipe</a></nav><button class="menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button></div></header>
+<header class="site-header"><div class="container nav"><a class="brand" href="#top"><span class="brand-mark">MR</span><span class="brand-name">MR<span>Excellence</span></span></a><nav class="nav-links"><a href="#services">Services</a><a href="#guide">Guide MRE</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a class="nav-cta" href="#contact">Parler à l'équipe</a></nav><button class="menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button></div></header>
 
 <main id="top">
 <section class="hero"><div class="container hero-grid"><div class="hero-copy"><div class="eyebrow">Vérification & accompagnement indépendant</div><h1>Achetez au Maroc.<br><em>Décidez avec confiance.</em></h1><p>Vous êtes à l'étranger ? MR Excellence vous accompagne sur place pour visiter, vérifier et documenter votre projet immobilier au Maroc — avec une vision claire avant de vous engager.</p><div class="hero-actions"><a class="btn btn-gold" href="#contact">Parler de mon projet →</a><a class="btn btn-ghost" href="#services">Découvrir notre méthode</a></div><div class="hero-trust"><div class="trust-item"><strong>Sur place</strong><span>au Maroc</span></div><div class="trust-item"><strong>À distance</strong><span>pour les MRE</span></div><div class="trust-item"><strong>Rapport</strong><span>photos & vidéo</span></div></div></div><div class="hero-video"><div class="video-frame"><video controls autoplay muted loop playsinline preload="metadata" poster="video-poster.jpg"><source src="mr-excellence-visite-distance.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la vidéo.</video></div><div class="video-label"><span>Visite immobilière à distance · Vidéo complète</span><span>MR Excellence</span></div></div></div></section>
 
 <section class="section section-soft" id="services"><div class="container"><div class="section-head"><div class="eyebrow">Notre accompagnement</div><h2>Vous êtes loin du Maroc.<br>Nous vérifions sur place.</h2><p>Un service pensé pour les MRE qui veulent avancer avec des informations concrètes, des images réelles et une coordination claire.</p></div><div class="value-grid"><article class="value-card"><span class="value-num">01 / VISITE</span><div class="value-icon">⌖</div><h3>Visite & vérification</h3><p>Nous nous déplaçons sur place pour observer le bien et les éléments importants de votre projet.</p></article><article class="value-card"><span class="value-num">02 / PREUVES</span><div class="value-icon">◉</div><h3>Photos, vidéo & rapport</h3><p>Vous recevez des éléments visuels et un compte-rendu structuré pour mieux décider à distance.</p></article><article class="value-card"><span class="value-num">03 / COORDINATION</span><div class="value-icon">↗</div><h3>Professionnels adaptés</h3><p>Selon votre dossier, nous facilitons la coordination avec notaire, avocat et autres intervenants.</p></article></div></div></section>
+
+
+<section class="section guide-section" id="guide">
+  <div class="container">
+    <div class="guide-card">
+      <div class="guide-cover" aria-label="Présentation du Guide Achat Maroc MRE">
+        <div class="guide-cover-inner">
+          <div class="guide-cover-kicker">Guide pratique · Spécial MRE</div>
+          <h3>Acheter un bien au Maroc sans arnaques</h3>
+          <p>100+ conseils, procédures, vérifications et checklists pratiques pour mieux préparer votre achat.</p>
+        </div>
+      </div>
+      <div class="guide-copy">
+        <div class="eyebrow">Notre guide pratique</div>
+        <h2>Préparez votre achat avant de vous engager.</h2>
+        <p>
+          Un guide pensé pour les Marocains Résidant à l'Étranger qui souhaitent comprendre les étapes,
+          vérifier les documents et avancer avec une méthode claire, même depuis l'étranger.
+        </p>
+        <div class="guide-points">
+          <div class="guide-point"><b>✓</b><span>Documents à vérifier côté acheteur et côté bien</span></div>
+          <div class="guide-point"><b>✓</b><span>Étapes légales d'achat, de la visite au titre définitif</span></div>
+          <div class="guide-point"><b>✓</b><span>Transfert des fonds et points d'attention pour les MRE</span></div>
+          <div class="guide-point"><b>✓</b><span>Erreurs fréquentes et conseils pratiques anti-arnaque</span></div>
+          <div class="guide-point"><b>✓</b><span>Checklist finale avant de signer</span></div>
+          <div class="guide-point"><b>✓</b><span>Modèles et outils pratiques annoncés dans les annexes</span></div>
+        </div>
+        <div class="guide-actions">
+          <a class="guide-btn" href="https://mreinvest.gumroad.com/l/grlbpj" target="_blank" rel="noopener">
+            Découvrir le Guide MRE →
+          </a>
+          <a class="btn btn-ghost" style="background:var(--navy);border-color:var(--navy)" href="#contact">
+            Une question ? Contactez-nous
+          </a>
+        </div>
+        <p class="guide-note">
+          Le guide est une ressource d'information et de préparation. Pour votre situation personnelle,
+          faites valider les points juridiques, bancaires ou administratifs par le professionnel compétent.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section"><div class="container feature"><div class="feature-visual"><div class="quote-card"><strong>Votre projet. Votre décision.</strong><p>Notre rôle est de vous donner une vision plus claire du bien et des vérifications à effectuer. La décision finale vous appartient.</p></div></div><div class="feature-copy"><div class="eyebrow">Pourquoi MR Excellence</div><h2>Une présence locale quand vous ne pouvez pas être là.</h2><ul class="check-list"><li><span class="check">✓</span><span>Échange initial pour comprendre votre projet et vos priorités.</span></li><li><span class="check">✓</span><span>Visite du bien avec photos et vidéo datées.</span></li><li><span class="check">✓</span><span>Vérification des documents selon la mission choisie.</span></li><li><span class="check">✓</span><span>Rapport clair pour vous aider à avancer à distance.</span></li></ul><a class="btn btn-gold" style="background:var(--navy);color:#fff" href="#tarifs">Voir les accompagnements →</a></div></div></section>
 
