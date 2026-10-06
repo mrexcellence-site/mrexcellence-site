@@ -60,11 +60,7 @@
     linear-gradient(135deg,#123F53 0%,#00233A 58%,#071a2d 100%);
   position:relative;overflow:hidden;color:#fff;
 }
-.guide-section:before{
-  content:"MRE";position:absolute;right:-35px;top:20px;
-  font-size:220px;font-weight:950;letter-spacing:-12px;
-  color:rgba(255,255,255,.035);pointer-events:none;
-}
+
 .guide-section .section-head{position:relative;z-index:1}
 .guide-section .section-head h2{color:#fff}
 .guide-section .section-head p{color:#d9e4e8}
@@ -79,27 +75,24 @@
 }
 .guide-visual{
   position:relative;min-height:480px;border-radius:24px;overflow:hidden;
-  background:linear-gradient(145deg,#18536D,#00233A);
+  background-image:linear-gradient(145deg,rgba(0,35,58,.48),rgba(0,35,58,.70)),url("https://images.pexels.com/photos/323775/pexels-photo-323775.jpeg?auto=compress&cs=tinysrgb&w=1200");
+  background-size:cover;background-position:center;
   border:1px solid rgba(255,255,255,.13);
   display:flex;align-items:center;justify-content:center;padding:24px;
   box-shadow:0 22px 55px rgba(0,0,0,.28);
 }
-.guide-visual:before{
-  content:"GUIDE";position:absolute;right:-30px;top:26px;
-  font-size:88px;font-weight:950;letter-spacing:-4px;
-  color:rgba(255,231,134,.055);transform:rotate(-8deg);
-}
+
 .guide-visual-link{
   position:relative;z-index:2;display:block;width:min(100%,350px);
   text-decoration:none;cursor:pointer;
 }
-.guide-cover-img{
+.guide-cover-img-old{
   width:100%;height:auto;max-height:430px;object-fit:cover;
   border-radius:14px;background:#fbf8f0;
   box-shadow:0 24px 55px rgba(0,0,0,.36);
   transition:transform .22s ease,box-shadow .22s ease;
 }
-.guide-visual-link:hover .guide-cover-img{
+.guide-visual-link:hover .guide-cover-img-old{
   transform:translateY(-5px) rotate(.4deg);
   box-shadow:0 31px 68px rgba(0,0,0,.44);
 }
@@ -109,6 +102,53 @@
   font-size:11px;font-weight:950;letter-spacing:.35px;white-space:nowrap;
   box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
+
+.guide-preview-link{
+  width:100%;height:100%;min-height:430px;
+  display:flex;align-items:flex-end;justify-content:center;
+  padding:22px;text-decoration:none;cursor:pointer;
+}
+.guide-preview-overlay{
+  width:min(100%,370px);
+  padding:26px 24px 24px;
+  border-radius:20px;
+  background:linear-gradient(145deg,rgba(0,35,58,.93),rgba(18,63,83,.82));
+  border:1px solid rgba(255,231,134,.34);
+  box-shadow:0 22px 50px rgba(0,0,0,.34);
+  backdrop-filter:blur(7px);
+  color:#fff;
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.guide-preview-link:hover .guide-preview-overlay{
+  transform:translateY(-5px);
+  box-shadow:0 30px 64px rgba(0,0,0,.42);
+}
+.guide-preview-kicker{
+  display:inline-block;
+  font-size:10px;font-weight:950;letter-spacing:1.5px;
+  color:#FFE786;text-transform:uppercase;margin-bottom:10px;
+}
+.guide-preview-icon{
+  width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
+  background:#FFE786;color:#00233A;font-size:26px;font-weight:950;
+  margin-bottom:15px;
+}
+.guide-preview-overlay h3{
+  margin:0 0 9px;color:#fff;font-size:27px;line-height:1.1;
+}
+.guide-preview-overlay p{
+  margin:0 0 17px;color:#dbe6eb;font-size:13px;line-height:1.5;
+}
+.guide-preview-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:11px 15px;border-radius:10px;
+  background:#FFE786;color:#00233A;font-size:12px;font-weight:950;
+}
+.guide-photo-credit{
+  position:absolute;bottom:10px;left:16px;right:16px;z-index:3;
+  color:rgba(255,255,255,.70);font-size:9px;line-height:1.35;text-align:center;
+}
+
 .guide-copy{color:#fff}
 .guide-copy .eyebrow{color:#FFE786}
 .guide-copy h2{
@@ -191,10 +231,19 @@
 
     <div class="guide-card">
       <div class="guide-visual">
-        <a class="guide-visual-link" href="https://mreinvest.gumroad.com/l/grlbpj" target="_blank" rel="noopener" aria-label="Acheter le Guide MRE sur Gumroad">
-          <img class='guide-cover-img' src='guide-mre-cover.png' alt='Le Guide complet pour acheter un bien au Maroc sans arnaques — Spécial MRE 2025'>
-          <span class="guide-click-hint">Cliquez sur le guide pour l'ouvrir</span>
+        <a class="guide-visual-link guide-preview-link"
+           href="https://mreinvest.gumroad.com/l/grlbpj"
+           target="_blank" rel="noopener"
+           aria-label="Acheter le Guide MRE sur Gumroad">
+          <div class="guide-preview-overlay">
+            <span class="guide-preview-kicker">GUIDE MRE · 2025</span>
+            <div class="guide-preview-icon">⌂</div>
+            <h3>Le Guide complet pour acheter un bien au Maroc</h3>
+            <p>21 pages · 12 chapitres · 100+ conseils & points de contrôle</p>
+            <span class="guide-preview-btn">Voir le guide sur Gumroad →</span>
+          </div>
         </a>
+        <div class="guide-photo-credit">Photo d'illustration · architecture marocaine</div>
       </div>
 
       <div class="guide-copy">
