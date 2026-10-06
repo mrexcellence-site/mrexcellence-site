@@ -51,6 +51,122 @@
 .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.faq{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.faq summary{cursor:pointer;font-weight:900;color:var(--navy)}.faq p{color:var(--muted);font-size:14px;margin:12px 0 0}.footer{background:#041322;color:#aebdc7;padding:35px 0}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center}.footer-brand{color:#fff;font-weight:900;font-size:19px}.footer-brand span{color:var(--gold)}.footer a{color:#dbe3e8;text-decoration:none;margin-left:18px;font-size:13px}.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;background:#1faf5b;color:#fff;text-decoration:none;padding:13px 17px;border-radius:999px;box-shadow:0 15px 35px rgba(0,0,0,.22);font-weight:900;font-size:13px}
 @media(max-width:950px){.nav-links{display:none}.menu{display:block}.hero-grid,.feature,.contact-grid{grid-template-columns:1fr}.hero-video{margin:0 auto}.value-grid,.price-grid{grid-template-columns:1fr}.price-card.featured{transform:none}.process-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr}.hero{min-height:auto}.hero-trust{margin-top:32px}}
 @media(max-width:600px){.nav{height:68px}.brand-name{font-size:17px}.brand-mark{width:37px;height:37px}.hero{padding-top:105px}.hero h1{letter-spacing:-1.8px}.hero-copy>p{font-size:17px}.section{padding:75px 0}.hero-video{width:100%;max-width:360px}.process-grid{grid-template-columns:1fr}.footer-grid{flex-direction:column;align-items:flex-start}.footer a{margin:0 16px 0 0}.float-wa{right:14px;bottom:14px}.hero-actions .btn{width:100%}}
+
+
+/* Guide MRE — dark guide-inspired interface */
+.guide-section{
+  background:
+    radial-gradient(circle at 85% 18%, rgba(255,231,134,.10), transparent 28%),
+    linear-gradient(135deg,#123F53 0%,#00233A 58%,#071a2d 100%);
+  position:relative;overflow:hidden;color:#fff;
+}
+.guide-section:before{
+  content:"MRE";position:absolute;right:-35px;top:20px;
+  font-size:220px;font-weight:950;letter-spacing:-12px;
+  color:rgba(255,255,255,.035);pointer-events:none;
+}
+.guide-section .section-head{position:relative;z-index:1}
+.guide-section .section-head h2{color:#fff}
+.guide-section .section-head p{color:#d9e4e8}
+
+.guide-card{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:.82fr 1.18fr;gap:52px;align-items:center;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.16);border-radius:30px;padding:36px;
+  box-shadow:0 28px 80px rgba(0,0,0,.28);
+  backdrop-filter:blur(8px);
+}
+.guide-visual{
+  position:relative;min-height:480px;border-radius:24px;overflow:hidden;
+  background:linear-gradient(145deg,#18536D,#00233A);
+  border:1px solid rgba(255,255,255,.13);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+  box-shadow:0 22px 55px rgba(0,0,0,.28);
+}
+.guide-visual:before{
+  content:"GUIDE";position:absolute;right:-30px;top:26px;
+  font-size:88px;font-weight:950;letter-spacing:-4px;
+  color:rgba(255,231,134,.055);transform:rotate(-8deg);
+}
+.guide-visual-link{
+  position:relative;z-index:2;display:block;width:min(100%,350px);
+  text-decoration:none;cursor:pointer;
+}
+.guide-cover-img{
+  width:100%;height:auto;max-height:430px;object-fit:cover;
+  border-radius:14px;background:#fbf8f0;
+  box-shadow:0 24px 55px rgba(0,0,0,.36);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.guide-visual-link:hover .guide-cover-img{
+  transform:translateY(-5px) rotate(.4deg);
+  box-shadow:0 31px 68px rgba(0,0,0,.44);
+}
+.guide-click-hint{
+  position:absolute;left:50%;bottom:-15px;transform:translateX(-50%);
+  background:#FFE786;color:#00233A;padding:9px 15px;border-radius:999px;
+  font-size:11px;font-weight:950;letter-spacing:.35px;white-space:nowrap;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+.guide-copy{color:#fff}
+.guide-copy .eyebrow{color:#FFE786}
+.guide-copy h2{
+  color:#fff;font-size:clamp(34px,4.3vw,56px);line-height:1.04;
+  letter-spacing:-1.7px;margin:14px 0;
+}
+.guide-copy>p{font-size:17px;color:#d9e4e8;max-width:700px;margin:0 0 22px}
+.guide-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0;
+}
+.guide-stat{
+  background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.13);
+  border-radius:16px;padding:15px 12px;
+}
+.guide-stat strong{display:block;color:#FFE786;font-size:23px;line-height:1.1}
+.guide-stat span{display:block;margin-top:5px;color:#cbd7de;font-size:11.5px}
+.guide-points{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:11px 20px;margin:20px 0 24px;
+}
+.guide-point{display:flex;gap:10px;align-items:flex-start;color:#eef4f7;font-size:14px;line-height:1.45}
+.guide-point b{
+  flex:0 0 auto;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+  background:#FFE786;color:#00233A;font-size:12px;margin-top:1px;font-weight:950;
+}
+.guide-price-row{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-top:7px}
+.guide-old-price{font-size:20px;color:#9fb0c9;text-decoration:line-through}
+.guide-new-price{font-family:Georgia,serif;font-size:46px;font-weight:800;color:#FFE786;line-height:1}
+.guide-price-note{font-size:12px;color:#c7d2e3;margin:3px 0 0}
+.guide-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:20px}
+.guide-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 22px;border-radius:11px;text-decoration:none;font-weight:950;
+  background:#FFE786;color:#00233A;border:1px solid rgba(255,231,134,.35);
+  box-shadow:0 12px 28px rgba(0,0,0,.20);transition:transform .2s ease,box-shadow .2s ease;
+}
+.guide-btn:hover{transform:translateY(-2px);box-shadow:0 17px 36px rgba(0,0,0,.28)}
+.guide-secondary{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 20px;border-radius:11px;text-decoration:none;font-weight:900;
+  background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.22);
+}
+.guide-note{font-size:11.5px;color:#aebdc7;margin:16px 0 0;line-height:1.5}
+.guide-content-strip{
+  margin-top:24px;padding:18px 20px;border-radius:18px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+}
+.guide-content-strip strong{display:block;color:#FFE786;font-size:13px;margin-bottom:6px}
+.guide-content-strip span{font-size:12.5px;color:#cbd7de;line-height:1.55}
+@media (max-width:860px){
+  .guide-card{grid-template-columns:1fr;padding:24px;gap:28px}
+  .guide-visual{min-height:410px}
+}
+@media (max-width:560px){
+  .guide-stats{grid-template-columns:1fr}
+  .guide-points{grid-template-columns:1fr}
+  .guide-visual{min-height:350px}
+}
+
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZR1LTWP85"></script>
@@ -67,37 +183,62 @@
 
 <section class="section guide-section" id="guide">
   <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">GUIDE MRE · 2025</div>
+      <h2>Le guide complet pour acheter un bien au Maroc sans arnaques.</h2>
+      <p>Une ressource pratique pour préparer votre achat, vérifier les points essentiels et avancer avec une méthode claire, même depuis l'étranger.</p>
+    </div>
+
     <div class="guide-card">
-      <div class="guide-cover" aria-label="Présentation du Guide Achat Maroc MRE">
-        <div class="guide-cover-inner">
-          <div class="guide-cover-kicker">Guide pratique · Spécial MRE</div>
-          <h3>Acheter un bien au Maroc sans arnaques</h3>
-          <p>100+ conseils, procédures, vérifications et checklists pratiques pour mieux préparer votre achat.</p>
-        </div>
+      <div class="guide-visual">
+        <a class="guide-visual-link" href="https://mreinvest.gumroad.com/l/grlbpj" target="_blank" rel="noopener" aria-label="Acheter le Guide MRE sur Gumroad">
+          <img class='guide-cover-img' src='guide-mre-cover.png' alt='Le Guide complet pour acheter un bien au Maroc sans arnaques — Spécial MRE 2025'>
+          <span class="guide-click-hint">Cliquez sur le guide pour l'ouvrir</span>
+        </a>
       </div>
+
       <div class="guide-copy">
         <div class="eyebrow">Notre guide pratique</div>
-        <h2>Préparez votre achat avant de vous engager.</h2>
+        <h2>Achetez avec une vision claire avant de vous engager.</h2>
         <p>
-          Un guide pensé pour les Marocains Résidant à l'Étranger qui souhaitent comprendre les étapes,
-          vérifier les documents et avancer avec une méthode claire, même depuis l'étranger.
+          Ce guide est conçu pour les MRE, les familles, les primo-accédants et les investisseurs
+          qui veulent mieux comprendre les démarches, éviter les erreurs fréquentes et préparer un achat
+          immobilier au Maroc, y compris à distance.
         </p>
-        <div class="guide-points">
-          <div class="guide-point"><b>✓</b><span>Documents à vérifier côté acheteur et côté bien</span></div>
-          <div class="guide-point"><b>✓</b><span>Étapes légales d'achat, de la visite au titre définitif</span></div>
-          <div class="guide-point"><b>✓</b><span>Transfert des fonds et points d'attention pour les MRE</span></div>
-          <div class="guide-point"><b>✓</b><span>Erreurs fréquentes et conseils pratiques anti-arnaque</span></div>
-          <div class="guide-point"><b>✓</b><span>Checklist finale avant de signer</span></div>
-          <div class="guide-point"><b>✓</b><span>Modèles et outils pratiques annoncés dans les annexes</span></div>
+
+        <div class="guide-stats">
+          <div class="guide-stat"><strong>21</strong><span>pages de guide</span></div>
+          <div class="guide-stat"><strong>12</strong><span>chapitres pratiques</span></div>
+          <div class="guide-stat"><strong>100+</strong><span>points de contrôle & conseils</span></div>
         </div>
+
+        <div class="guide-points">
+          <div class="guide-point"><b>✓</b><span>Documents à réunir et à vérifier côté acheteur, vendeur et bien</span></div>
+          <div class="guide-point"><b>✓</b><span>Étapes légales de l'achat, de la visite au titre définitif</span></div>
+          <div class="guide-point"><b>✓</b><span>Transfert d'argent et points d'attention pour les MRE</span></div>
+          <div class="guide-point"><b>✓</b><span>Erreurs fréquentes et conseils pratiques anti-arnaque</span></div>
+          <div class="guide-point"><b>✓</b><span>Checklist finale avant signature, présent ou à distance</span></div>
+          <div class="guide-point"><b>✓</b><span>Simulateur de frais Excel + 2 modèles Word + checklist PDF</span></div>
+        </div>
+
+        <div class="guide-price-row">
+          <span class="guide-old-price">39 €</span>
+          <span class="guide-new-price">27 €</span>
+          <span class="guide-price-note">prix de lancement · téléchargement immédiat</span>
+        </div>
+
         <div class="guide-actions">
           <a class="guide-btn" href="https://mreinvest.gumroad.com/l/grlbpj" target="_blank" rel="noopener">
-            Découvrir le Guide MRE →
+            Télécharger le guide sur Gumroad →
           </a>
-          <a class="btn btn-ghost" style="background:var(--navy);border-color:var(--navy)" href="#contact">
-            Une question ? Contactez-nous
-          </a>
+          <a class="guide-secondary" href="#contact">Besoin d'un accompagnement ?</a>
         </div>
+
+        <div class="guide-content-strip">
+          <strong>Inclus avec le guide</strong>
+          <span>Guide + simulateur de frais + modèles Word + checklist imprimable.</span>
+        </div>
+
         <p class="guide-note">
           Le guide est une ressource d'information et de préparation. Pour votre situation personnelle,
           faites valider les points juridiques, bancaires ou administratifs par le professionnel compétent.
@@ -129,4 +270,3 @@ const nav=document.querySelector('.nav-links');document.querySelector('.menu')?.
 <style>.mobile-open{display:flex!important;position:absolute;top:68px;left:0;right:0;background:var(--navy);padding:18px 6%;flex-direction:column;gap:16px;border-top:1px solid rgba(255,255,255,.1)}.mobile-open .nav-cta{width:max-content}</style>
 </body>
 </html>
-s
