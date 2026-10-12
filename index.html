@@ -227,6 +227,14 @@
   .brand-name{font-size:17px}
   .brand-tagline{font-size:6.1px}
 }
+
+.language-control{display:inline-flex;align-items:center;gap:7px;color:#d7e0e5;font-size:12px;font-weight:700;white-space:nowrap}
+.language-control select{background:#102838;color:#fff;border:1px solid rgba(255,255,255,.24);border-radius:9px;padding:9px 28px 9px 10px;font:inherit;max-width:150px;cursor:pointer}
+.language-control option{background:#102838;color:#fff}
+#google_translate_element{position:absolute!important;left:-9999px!important;top:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.goog-te-banner-frame,.skiptranslate iframe{display:none!important}body{top:0!important}
+html[dir="rtl"] body{text-align:right}html[dir="rtl"] .nav{direction:rtl}html[dir="rtl"] .hero-grid,html[dir="rtl"] .contact-grid,html[dir="rtl"] .feature{direction:rtl}html[dir="rtl"] .check-list{padding-right:0}html[dir="rtl"] .contact-methods{text-align:right}
+@media(max-width:860px){.language-control{align-self:flex-start}.language-control select{max-width:180px}}
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZR1LTWP85"></script>
@@ -238,7 +246,7 @@
   <img class="brand-logo" src="mr-excellence-house-circle.png" alt="MR Excellence">
   <span class="brand-name"><span class="brand-white">MR</span><span class="brand-gold">Excellence</span></span>
 </a>
-<nav class="nav-links"><a href="#services">Services</a><a href="#guide">Guide MRE</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a class="nav-cta" href="#contact">Parler à l'équipe</a></nav>
+<nav class="nav-links"><a href="#services">Services</a><a href="#guide">Guide MRE</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a class="nav-cta" href="#contact">Parler à l'équipe</a><label class="language-control"><span class="language-label">Langue</span><select id="languageSelect" aria-label="Choisir la langue"><option value="fr">Français</option><option value="en">English</option><option value="ar">العربية</option><option value="es">Español</option><option value="nl">Nederlands</option></select></label></nav>
 <button class="menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
 </div></header>
 
@@ -251,7 +259,7 @@
 <section class="section guide-section" id="guide">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">GUIDE MRE · 2026</div>
+      <div class="eyebrow">GUIDE MRE · 2025</div>
       <h2>Le guide complet pour acheter un bien au Maroc sans arnaques.</h2>
       <p>Une ressource pratique pour préparer votre achat, vérifier les points essentiels et avancer avec une méthode claire, même depuis l'étranger.</p>
     </div>
@@ -263,7 +271,7 @@
            target="_blank" rel="noopener"
            aria-label="Acheter le Guide MRE sur Gumroad">
           <div class="guide-preview-overlay">
-            <span class="guide-preview-kicker">GUIDE MRE · 2026</span>
+            <span class="guide-preview-kicker">GUIDE MRE · 2025</span>
             <div class="guide-preview-icon">⌂</div>
             <h3>Le Guide complet pour acheter un bien au Maroc</h3>
             <p>21 pages · 12 chapitres · 100+ conseils & points de contrôle</p>
@@ -298,8 +306,8 @@
         </div>
 
         <div class="guide-price-row">
-          <span class="guide-old-price">9 €</span>
-          <span class="guide-new-price">3 €</span>
+          <span class="guide-old-price">39 €</span>
+          <span class="guide-new-price">27 €</span>
           <span class="guide-price-note">prix de lancement · téléchargement immédiat</span>
         </div>
 
@@ -342,7 +350,54 @@
 const PAYPAL_LINKS={decouverte:"https://www.paypal.com/ncp/payment/ZW5Z7CMVKBFCS",standard:"https://www.paypal.com/ncp/payment/M4K7PVZNTSPTC",premium:"https://www.paypal.com/ncp/payment/LGNY3QR5C3VY4"};
 document.querySelectorAll('.paypal-btn').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();const url=PAYPAL_LINKS[btn.dataset.plan];if(url)location.href=url;}));
 const nav=document.querySelector('.nav-links');document.querySelector('.menu')?.addEventListener('click',()=>nav.classList.toggle('mobile-open'));
+
+// Langue automatique selon la langue préférée du navigateur, avec choix manuel mémorisé.
+(function(){
+  const supported=['fr','en','ar','es','nl'];
+  const select=document.getElementById('languageSelect');
+  const stored=(()=>{try{return localStorage.getItem('mrexcellence-language')}catch(e){return null}})();
+  const browser=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'fr'])
+    .map(v=>(v||'fr').toLowerCase().split(/[-_]/)[0]).find(v=>supported.includes(v))||'fr';
+  const initial=supported.includes(stored)?stored:browser;
+  function setGoogleCookie(lang){
+    const value='/fr/'+lang;
+    document.cookie='googtrans='+value+';path=/;SameSite=Lax';
+    try{localStorage.setItem('mrexcellence-language',lang)}catch(e){}
+    document.documentElement.lang=lang;
+    document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  }
+  setGoogleCookie(initial);
+  if(select) select.value=initial;
+  window.googleTranslateElementInit=function(){
+    if(window.google&&google.translate){
+      new google.translate.TranslateElement({pageLanguage:'fr',includedLanguages:'fr,en,ar,es,nl',autoDisplay:false, multilanguagePage:true},'google_translate_element');
+      if(initial!=='fr') setTimeout(()=>applyGoogleLanguage(initial),700);
+    }
+  };
+  function applyGoogleLanguage(lang){
+    const combo=document.querySelector('.goog-te-combo');
+    if(combo&&combo.value!==lang){combo.value=lang;combo.dispatchEvent(new Event('change'));}
+    document.documentElement.lang=lang;
+    document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  }
+  if(select) select.addEventListener('change',function(){
+    const lang=this.value;
+    setGoogleCookie(lang);
+    if(lang==='fr'){
+      // Reload the original French page and clear any previous translation.
+      document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+      try{localStorage.setItem('mrexcellence-language','fr')}catch(e){}
+      location.reload();
+    } else {
+      applyGoogleLanguage(lang);
+      // Google Translate may initialize a moment after the page loads.
+      setTimeout(()=>applyGoogleLanguage(lang),500);
+    }
+  });
+})();
 </script>
+<div id="google_translate_element" aria-hidden="true"></div>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <style>.mobile-open{display:flex!important;position:absolute;top:68px;left:0;right:0;background:var(--navy);padding:18px 6%;flex-direction:column;gap:16px;border-top:1px solid rgba(255,255,255,.1)}.mobile-open .nav-cta{width:max-content}</style>
 </body>
 </html>
