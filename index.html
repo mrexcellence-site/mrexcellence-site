@@ -21,7 +21,7 @@
 .menu{display:none;color:#fff;background:none;border:0;font-size:27px}
 /* Hero */
 .hero{min-height:780px;padding:130px 0 78px;background:radial-gradient(circle at 76% 25%,#214965 0,transparent 32%),linear-gradient(135deg,#061a2d,#0c2a43 62%,#071a2d);color:#fff;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}.hero h1{font-size:clamp(45px,6.1vw,78px);line-height:1.02;letter-spacing:-2.8px;margin:18px 0 22px;max-width:760px}.hero h1 em{font-style:normal;color:var(--gold2)}.hero-copy>p{font-size:19px;color:#dce5eb;max-width:670px;margin:0 0 26px}.hero-actions{display:flex;flex-wrap:wrap;gap:11px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 21px;border-radius:10px;text-decoration:none;font-weight:900;border:1px solid transparent;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-gold{background:var(--gold);color:var(--navy)}.btn-ghost{border-color:rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.04)}
-.hero-video{max-width:470px;margin-left:auto}.video-frame{padding:8px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);border-radius:28px;box-shadow:0 35px 90px rgba(0,0,0,.38)}.video-frame video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#02070c;border-radius:20px}.video-label{display:flex;justify-content:space-between;gap:15px;margin:13px 6px 0;color:#cbd7de;font-size:12px}.hero-trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:45px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12)}.trust-item strong{display:block;font-size:20px;color:#fff}.trust-item span{font-size:12px;color:#aebdc7}
+.hero-video{max-width:470px;margin-left:auto}.video-frame{padding:8px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);border-radius:28px;box-shadow:0 35px 90px rgba(0,0,0,.38)}.video-frame video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#02070c;border-radius:20px}.video-label{display:flex;justify-content:space-between;gap:15px;margin:13px 6px 0;color:#cbd7de;font-size:12px}.video-label-title{align-self:center}.video-quality-control{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;color:#cbd7de;font-size:12px}.video-quality-control input{cursor:pointer}.video-quality-control select{background:#102838;color:#fff;border:1px solid rgba(255,255,255,.24);border-radius:8px;padding:7px 8px;font:inherit;max-width:180px;cursor:pointer}.video-quality-control option{background:#102838;color:#fff}@media(max-width:430px){.video-label{align-items:flex-start;flex-direction:column}.video-quality-control{align-self:flex-end}}.hero-trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:45px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12)}.trust-item strong{display:block;font-size:20px;color:#fff}.trust-item span{font-size:12px;color:#aebdc7}
 /* Intro / value */
 .section{padding:105px 0}.section-soft{background:var(--cream)}.section-dark{background:var(--navy);color:#fff}.section-head{max-width:770px;margin-bottom:48px}.section-head h2{font-size:clamp(35px,4.5vw,57px);line-height:1.06;letter-spacing:-1.7px;margin:14px 0}.section-head p{font-size:17px;color:var(--muted);margin:0}.section-dark .section-head p{color:#bac8d1}
 .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.value-card{padding:30px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 16px 45px rgba(7,26,45,.06)}.value-num{font-size:12px;color:var(--gold);font-weight:950;letter-spacing:1px}.value-icon{font-size:30px;margin:25px 0 13px}.value-card h3{font-size:22px;margin:0 0 8px;color:var(--navy)}.value-card p{margin:0;color:var(--muted)}
@@ -251,7 +251,13 @@ html[dir="rtl"] body{text-align:right}html[dir="rtl"] .nav{direction:rtl}html[di
 </div></header>
 
 <main id="top">
-<section class="hero"><div class="container hero-grid"><div class="hero-copy"><div class="eyebrow">Vérification & accompagnement indépendant</div><h1>Achetez au Maroc.<br><em>Décidez avec confiance.</em></h1><p>Vous êtes à l'étranger ? MR Excellence vous accompagne sur place pour visiter, vérifier et documenter votre projet immobilier au Maroc — avec une vision claire avant de vous engager.</p><div class="hero-actions"><a class="btn btn-gold" href="#contact">Parler de mon projet →</a><a class="btn btn-ghost" href="#services">Découvrir notre méthode</a></div><div class="hero-trust"><div class="trust-item"><strong>Sur place</strong><span>au Maroc</span></div><div class="trust-item"><strong>À distance</strong><span>pour les MRE</span></div><div class="trust-item"><strong>Rapport</strong><span>photos & vidéo</span></div></div></div><div class="hero-video"><div class="video-frame"><video controls autoplay muted loop playsinline preload="metadata" poster="video-poster.jpg"><source src="mr-excellence-visite-distance.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la vidéo.</video></div><div class="video-label"><span>Visite immobilière à distance · Vidéo complète</span><span>MR Excellence</span></div></div></div></section>
+<section class="hero"><div class="container hero-grid"><div class="hero-copy"><div class="eyebrow">Vérification & accompagnement indépendant</div><h1>Achetez au Maroc.<br><em>Décidez avec confiance.</em></h1><p>Vous êtes à l'étranger ? MR Excellence vous accompagne sur place pour visiter, vérifier et documenter votre projet immobilier au Maroc — avec une vision claire avant de vous engager.</p><div class="hero-actions"><a class="btn btn-gold" href="#contact">Parler de mon projet →</a><a class="btn btn-ghost" href="#services">Découvrir notre méthode</a></div><div class="hero-trust"><div class="trust-item"><strong>Sur place</strong><span>au Maroc</span></div><div class="trust-item"><strong>À distance</strong><span>pour les MRE</span></div><div class="trust-item"><strong>Rapport</strong><span>photos & vidéo</span></div></div></div><div class="hero-video"><div class="video-frame"><video id="mrExcellenceVideo" controls autoplay muted loop playsinline preload="metadata" poster="video-poster.jpg"><source id="mrExcellenceVideoSource" src="mr-excellence-visite-distance.mp4" type="video/mp4">
+<track kind="subtitles" src="captions-fr.vtt" srclang="fr" label="Français" default>
+<track kind="subtitles" src="captions-en.vtt" srclang="en" label="English">
+<track kind="subtitles" src="captions-ar.vtt" srclang="ar" label="العربية">
+<track kind="subtitles" src="captions-es.vtt" srclang="es" label="Español">
+<track kind="subtitles" src="captions-nl.vtt" srclang="nl" label="Nederlands">
+Votre navigateur ne prend pas en charge la vidéo.</video></div><div class="video-label"><span class="video-label-title">Visite immobilière à distance · Vidéo complète</span><label class="video-quality-control"><span>Qualité</span><select id="videoQuality" aria-label="Choisir la qualité vidéo"><option value="auto">Auto / 720p</option><option value="480">Économie de données · 480p</option></select></label><label class="video-quality-control"><input id="videoDubbing" type="checkbox" checked style="accent-color:#d9b36c"> <span>Voix traduite</span></label><label class="video-quality-control"><input id="videoSubtitles" type="checkbox" checked style="accent-color:#d9b36c"> <span>Sous-titres</span></label></div></div></div></section>
 
 <section class="section section-soft" id="services"><div class="container"><div class="section-head"><div class="eyebrow">Notre accompagnement</div><h2>Vous êtes loin du Maroc.<br>Nous vérifions sur place.</h2><p>Un service pensé pour les MRE qui veulent avancer avec des informations concrètes, des images réelles et une coordination claire.</p></div><div class="value-grid"><article class="value-card"><span class="value-num">01 / VISITE</span><div class="value-icon">⌖</div><h3>Visite & vérification</h3><p>Nous nous déplaçons sur place pour observer le bien et les éléments importants de votre projet.</p></article><article class="value-card"><span class="value-num">02 / PREUVES</span><div class="value-icon">◉</div><h3>Photos, vidéo & rapport</h3><p>Vous recevez des éléments visuels et un compte-rendu structuré pour mieux décider à distance.</p></article><article class="value-card"><span class="value-num">03 / COORDINATION</span><div class="value-icon">↗</div><h3>Professionnels adaptés</h3><p>Selon votre dossier, nous facilitons la coordination avec notaire, avocat et autres intervenants.</p></article></div></div></section>
 
@@ -306,8 +312,8 @@ html[dir="rtl"] body{text-align:right}html[dir="rtl"] .nav{direction:rtl}html[di
         </div>
 
         <div class="guide-price-row">
-          <span class="guide-old-price">9 €</span>
-          <span class="guide-new-price">3 €</span>
+          <span class="guide-old-price">18 $</span>
+          <span class="guide-new-price">9 $</span>
           <span class="guide-price-note">prix de lancement · téléchargement immédiat</span>
         </div>
 
@@ -349,7 +355,63 @@ html[dir="rtl"] body{text-align:right}html[dir="rtl"] .nav{direction:rtl}html[di
 <script>
 const PAYPAL_LINKS={decouverte:"https://www.paypal.com/ncp/payment/ZW5Z7CMVKBFCS",standard:"https://www.paypal.com/ncp/payment/M4K7PVZNTSPTC",premium:"https://www.paypal.com/ncp/payment/LGNY3QR5C3VY4"};
 document.querySelectorAll('.paypal-btn').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();const url=PAYPAL_LINKS[btn.dataset.plan];if(url)location.href=url;}));
+// Contrôle de qualité : source originale 720p ou version légère 480p.
+(function(){
+  const video=document.getElementById('mrExcellenceVideo');
+  const source=document.getElementById('mrExcellenceVideoSource');
+  const quality=document.getElementById('videoQuality');
+  if(!video||!source||!quality)return;
+  const sources={auto:'mr-excellence-visite-distance.mp4','480':'mr-excellence-visite-distance-480p.mp4'};
+  quality.addEventListener('change',function(){
+    const next=sources[this.value]||sources.auto;
+    if(source.getAttribute('src')===next)return;
+    const time=video.currentTime||0;
+    const wasPlaying=!video.paused;
+    source.setAttribute('src',next);
+    video.load();
+    video.addEventListener('loadedmetadata',function restorePlayback(){
+      video.removeEventListener('loadedmetadata',restorePlayback);
+      try{video.currentTime=Math.min(time,Math.max(0,video.duration-0.1));}catch(e){}
+      if(wasPlaying)video.play().catch(()=>{});
+    });
+  });
+})();
 const nav=document.querySelector('.nav-links');document.querySelector('.menu')?.addEventListener('click',()=>nav.classList.toggle('mobile-open'));
+
+// Sous-titres multilingues + voix de synthèse du navigateur, alignée sur les séquences.
+(function(){
+ const video=document.getElementById('mrExcellenceVideo');
+ const language=document.getElementById('languageSelect');
+ const dubbing=document.getElementById('videoDubbing');
+ const subtitles=document.getElementById('videoSubtitles');
+ if(!video||!language)return;
+ const narration={
+  fr:["Vous vivez à l’étranger et souhaitez acheter un bien immobilier au Maroc ?","Avec MR Excellence, bénéficiez d’une présence locale, même à distance.","Nous visitons le bien et vous partageons des photos et des vidéos datées.","Selon la mission choisie, nous vérifions les documents convenus et les points importants.","Vous recevez un rapport clair pour mieux comprendre le bien avant de vous engager.","Vous gardez le contrôle : la décision finale vous appartient.","Contactez MR Excellence et avançons ensemble dans votre projet immobilier au Maroc."],
+  en:["Living abroad and planning to buy property in Morocco?","With MR Excellence, you get local support even when you are far away.","We visit the property and share dated photos and videos with you.","Depending on your chosen service, we review agreed documents and key points.","You receive a clear report to better understand the property before committing.","You stay in control: the final decision is always yours.","Contact MR Excellence and take the next step in your property project in Morocco."],
+  ar:["هل تعيش في الخارج وتريد شراء عقار في المغرب؟","مع MR Excellence، تستفيد من مواكبة محلية حتى وأنت بعيد.","نزور العقار ونشارك معك صوراً وفيديوهات مؤرخة.","حسب الخدمة التي تختارها، نراجع الوثائق المتفق عليها والنقاط المهمة.","تتوصل بتقرير واضح يساعدك على فهم العقار قبل الالتزام بالشراء.","تبقى أنت صاحب القرار، فالقرار النهائي يعود إليك.","تواصل مع MR Excellence ولنخطُ معاً الخطوة التالية في مشروعك العقاري بالمغرب."],
+  es:["¿Vives en el extranjero y quieres comprar una propiedad en Marruecos?","Con MR Excellence, cuentas con apoyo local aunque estés lejos.","Visitamos la propiedad y te enviamos fotos y vídeos con fecha.","Según el servicio elegido, revisamos los documentos acordados y los puntos importantes.","Recibes un informe claro para comprender mejor la propiedad antes de comprometerte.","Tú mantienes el control: la decisión final es tuya.","Contacta con MR Excellence y avancemos en tu proyecto inmobiliario en Marruecos."],
+  nl:["Woon je in het buitenland en wil je vastgoed kopen in Marokko?","Met MR Excellence krijg je lokale ondersteuning, ook op afstand.","We bezoeken het pand en delen gedateerde foto's en video's met je.","Afhankelijk van de gekozen dienst controleren we afgesproken documenten en belangrijke punten.","Je ontvangt een duidelijk rapport zodat je het pand beter kunt beoordelen voordat je beslist.","Jij houdt de controle: de uiteindelijke beslissing is aan jou.","Neem contact op met MR Excellence en zet de volgende stap in je vastgoedproject in Marokko."]
+ };
+ const starts=[0,8,16,24,32,41,49], ends=[8,16,24,32,41,49,58];
+ const voiceLang={fr:'fr-FR',en:'en-US',ar:'ar',es:'es-ES',nl:'nl-NL'};
+ let active=-1, availableVoices=[];
+ function getVoices(){availableVoices=window.speechSynthesis? speechSynthesis.getVoices():[];}
+ if('speechSynthesis' in window){getVoices();speechSynthesis.onvoiceschanged=getVoices;}
+ function stopSpeech(){if('speechSynthesis' in window)speechSynthesis.cancel();active=-1;}
+ function chooseVoice(lang){const wanted=voiceLang[lang]||'fr-FR';return availableVoices.find(v=>v.lang.toLowerCase()===wanted.toLowerCase())||availableVoices.find(v=>v.lang.toLowerCase().startsWith(lang+'-'))||availableVoices.find(v=>v.lang.toLowerCase().startsWith(lang))||null;}
+ function syncTracks(){const lang=language.value||'fr';Array.from(video.textTracks||[]).forEach(t=>{t.mode=(subtitles&&subtitles.checked&&t.language===lang)?'showing':'disabled';});}
+ function speakCue(index){if(!dubbing||!dubbing.checked||!('speechSynthesis' in window)||index<0||index>=narration[language.value].length)return;stopSpeech();active=index;const utterance=new SpeechSynthesisUtterance(narration[language.value][index]);utterance.lang=voiceLang[language.value]||'fr-FR';const voice=chooseVoice(language.value);if(voice)utterance.voice=voice;utterance.rate=0.94;utterance.pitch=1; speechSynthesis.speak(utterance);}
+ function onTime(){const t=video.currentTime;let idx=starts.findIndex((a,i)=>t>=a&&t<ends[i]);if(idx<0){if(t>=58){stopSpeech();active=-1;}return;}if(idx!==active)speakCue(idx);}
+ video.addEventListener('play',()=>{if(dubbing&&dubbing.checked)onTime();});
+ video.addEventListener('timeupdate',onTime);
+ video.addEventListener('pause',()=>{if(!video.ended)stopSpeech();});
+ video.addEventListener('seeking',stopSpeech);
+ video.addEventListener('ended',stopSpeech);
+ language.addEventListener('change',()=>{stopSpeech();syncTracks();if(!video.paused&&dubbing&&dubbing.checked)onTime();});
+ dubbing?.addEventListener('change',()=>{stopSpeech();if(dubbing.checked&&!video.paused)onTime();});
+ subtitles?.addEventListener('change',syncTracks);
+ video.addEventListener('loadedmetadata',syncTracks);syncTracks();
+})();
 
 // Langue automatique selon la langue préférée du navigateur, avec choix manuel mémorisé.
 (function(){
