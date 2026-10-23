@@ -235,6 +235,18 @@
 .goog-te-banner-frame,.skiptranslate iframe{display:none!important}body{top:0!important}
 html[dir="rtl"] body{text-align:right}html[dir="rtl"] .nav{direction:rtl}html[dir="rtl"] .hero-grid,html[dir="rtl"] .contact-grid,html[dir="rtl"] .feature{direction:rtl}html[dir="rtl"] .check-list{padding-right:0}html[dir="rtl"] .contact-methods{text-align:right}
 @media(max-width:860px){.language-control{align-self:flex-start}.language-control select{max-width:180px}}
+
+/* Photos réelles illustratives pour les trois étapes de l’accompagnement */
+.value-grid-photo{align-items:stretch;gap:22px}
+.value-card-photo{padding:0;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.value-photo{display:block;width:100%;height:255px;object-fit:cover;object-position:center}
+.value-content{padding:24px 30px 30px;flex:1}
+.value-content .value-icon{margin:12px 0 10px}
+.value-icon-round{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#fff2ce;color:var(--navy);font-size:27px}
+.value-content h3{font-size:22px;line-height:1.25;margin:0 0 8px;color:var(--navy)}
+.value-content p{margin:0;color:var(--muted)}
+@media(max-width:950px){.value-grid-photo{grid-template-columns:1fr}.value-photo{height:260px}.value-content{padding:24px}}
+
 </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZR1LTWP85"></script>
@@ -259,7 +271,11 @@ html[dir="rtl"] body{text-align:right}html[dir="rtl"] .nav{direction:rtl}html[di
 <track kind="subtitles" src="captions-nl.vtt" srclang="nl" label="Nederlands">
 Votre navigateur ne prend pas en charge la vidéo.</video></div><div class="video-label"><span class="video-label-title">Visite immobilière à distance · Vidéo complète</span><label class="video-quality-control"><span>Qualité</span><select id="videoQuality" aria-label="Choisir la qualité vidéo"><option value="auto">Auto / 720p</option><option value="480">Économie de données · 480p</option></select></label><label class="video-quality-control"><input id="videoDubbing" type="checkbox" checked style="accent-color:#d9b36c"> <span>Voix traduite</span></label><label class="video-quality-control"><input id="videoSubtitles" type="checkbox" checked style="accent-color:#d9b36c"> <span>Sous-titres</span></label></div></div></div></section>
 
-<section class="section section-soft" id="services"><div class="container"><div class="section-head"><div class="eyebrow">Notre accompagnement</div><h2>Vous êtes loin du Maroc.<br>Nous vérifions sur place.</h2><p>Un service pensé pour les MRE qui veulent avancer avec des informations concrètes, des images réelles et une coordination claire.</p></div><div class="value-grid"><article class="value-card"><span class="value-num">01 / VISITE</span><div class="value-icon">⌖</div><h3>Visite & vérification</h3><p>Nous nous déplaçons sur place pour observer le bien et les éléments importants de votre projet.</p></article><article class="value-card"><span class="value-num">02 / PREUVES</span><div class="value-icon">◉</div><h3>Photos, vidéo & rapport</h3><p>Vous recevez des éléments visuels et un compte-rendu structuré pour mieux décider à distance.</p></article><article class="value-card"><span class="value-num">03 / COORDINATION</span><div class="value-icon">↗</div><h3>Professionnels adaptés</h3><p>Selon votre dossier, nous facilitons la coordination avec notaire, avocat et autres intervenants.</p></article></div></div></section>
+<section class="section section-soft" id="services"><div class="container"><div class="section-head"><div class="eyebrow">Notre accompagnement</div><h2>Vous êtes loin du Maroc.<br>Nous vérifions sur place.</h2><p>Un service pensé pour les MRE qui veulent avancer avec des informations concrètes, des images réelles et une coordination claire.</p></div><div class="value-grid value-grid-photo">
+<article class="value-card value-card-photo"><img class="value-photo" src="assets/etape-visite.jpg" alt="Un membre de MR Excellence en gilet professionnel photographie une maison depuis l’extérieur"><div class="value-content"><span class="value-num">01 / VISITE</span><div class="value-icon value-icon-round">⌂</div><h3>Visite & vérification</h3><p>Nous nous déplaçons sur place, photographions le bien depuis l’extérieur et vérifions les éléments importants de votre projet.</p></div></article>
+<article class="value-card value-card-photo"><img class="value-photo" src="assets/etape-photos-interieur.jpg" alt="Un membre de MR Excellence photographie l’intérieur d’un logement, salon et pièces de vie"><div class="value-content"><span class="value-num">02 / PREUVES</span><div class="value-icon value-icon-round">▣</div><h3>Photos, vidéo & rapport</h3><p>Nous documentons les pièces du logement — chambre, cuisine, salon et autres espaces — avec des photos et vidéos réunies dans un rapport.</p></div></article>
+<article class="value-card value-card-photo"><img class="value-photo" src="assets/etape-coordination-avocat.jpg" alt="Un avocat au Maroc examine et signe des documents avec un client dans son bureau"><div class="value-content"><span class="value-num">03 / COORDINATION</span><div class="value-icon value-icon-round">⚖</div><h3>Coordination avec les professionnels</h3><p>Selon votre dossier, nous facilitons les échanges avec un avocat, un notaire ou d’autres intervenants et le suivi des documents utiles.</p></div></article>
+</div></div></section>
 
 
 <section class="section guide-section" id="guide">
@@ -277,7 +293,7 @@ Votre navigateur ne prend pas en charge la vidéo.</video></div><div class="vide
            target="_blank" rel="noopener"
            aria-label="Acheter le Guide MRE sur Gumroad">
           <div class="guide-preview-overlay">
-            <span class="guide-preview-kicker">GUIDE MRE · 2026</span>
+            <span class="guide-preview-kicker">GUIDE MRE · 2025</span>
             <div class="guide-preview-icon">⌂</div>
             <h3>Le Guide complet pour acheter un bien au Maroc</h3>
             <p>21 pages · 12 chapitres · 100+ conseils & points de contrôle</p>
@@ -312,8 +328,8 @@ Votre navigateur ne prend pas en charge la vidéo.</video></div><div class="vide
         </div>
 
         <div class="guide-price-row">
-          <span class="guide-old-price">18  $</span>
-          <span class="guide-new-price">9 $</span>
+          <span class="guide-old-price">39 €</span>
+          <span class="guide-new-price">27 €</span>
           <span class="guide-price-note">prix de lancement · téléchargement immédiat</span>
         </div>
 
